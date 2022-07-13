@@ -1,13 +1,11 @@
 from pathlib import Path
 import os
 from decouple import config
-import dj_database_url
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-b1nvst0=gm^j+1!6i=e-9!(x)w$&+(^gn!ibx=h+)ylre#^*yt'
-
-DEBUG = False
+SECRET_KEY = config('SECRET_KEY', default='django-insecure-b1nvst0=gm^j+1!6i=e-9!(x)w$&+(^gn!ibx=h+)ylre#^*yt')
+DEBUG = config('DJANGO_DEBUG', default=True, cast=bool)
 
 ALLOWED_HOSTS = ['*']
 
@@ -68,7 +66,7 @@ DATABASES = {
         'USER': 'root',
         'HOST': '',
         'PORT': '',
-        'PASSWORD': 'Da6879niel##',
+        'PASSWORD': config('DB_PASSWORD', default='Da6879niel##'),
     }
 }
 
