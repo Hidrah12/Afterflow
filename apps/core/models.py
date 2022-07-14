@@ -14,7 +14,7 @@ class TypeCategory(models.Model):
 
 class Category(models.Model):
     name = models.CharField(max_length = 30)
-    subcategorys = models.ManyToManyField(Subcategory, null = True, blank = True)
+    subcategorys = models.ManyToManyField(Subcategory)
     type_category = models.ForeignKey(TypeCategory, on_delete = models.PROTECT, null = True)
 
     def __str__(self) -> str:
