@@ -1,0 +1,8 @@
+.side-panel {
+    position: fixed;
+    right: -100%;
+    transition: .2s linear;
+}
+.panel-lateral {
+    right: 0;
+}

@@ -7,16 +7,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="{% static 'icons/icon-afterflow.ico' %}" type="image/x-icon">
     <link rel="stylesheet" href="{% static 'dist/output.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <script src="https://kit.fontawesome.com/6a9d03678c.js" crossorigin="anonymous"></script>
     {% block extra %}{% endblock %}
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body class="overflow-hidden">
     {% include 'components/navbar/navbar.html' %}
+    {% include 'components/side-panel/side-panel.html' %}
     {% block content_body %}
 
     {% endblock %}
     <script src="{% static 'js/darkMode.js' %}"></script>
     <script src="{% static 'js/menuSession.js' %}"></script>
+    <script src="{% static 'js/sidePanel.js' %}"></script>
 </body>
 </html>
