@@ -1,0 +1,30 @@
+<ul class="flex items-center space-x-5 font-['Calibri']">
+    <li class="group relative flex items-center space-x-1 cursor-pointer"><a class="text-[#736c6c]">Frameworks</a><i class="fa-solid fa-angle-down"></i>
+        <ul class="absolute invisible border-x-[1px] overflow-hidden font-['Calibri'] w-64 top-[1.4rem] left-[-4px] rounded-md group-hover:visible shadow-md bg-white border-t-[2px] border-t-[#715FD4]">
+            {% for framework in frameworks %}
+                <li class="py-4 px-5 font-['Roboto'] text-sm font-medium hover:bg-[#ecebeb84]"><a href="#" class="text-[#6c6b6b]">{{framework.name}}</a></li>
+            {% endfor %}
+        </ul>
+    </li>
+    <li class="group relative flex items-center space-x-1 cursor-pointer"><a class="text-[#736c6c]">Databases</a><i class="fa-solid fa-angle-down"></i>
+        <ul class="absolute invisible border-x-[1px] overflow-hidden font-['Calibri'] w-64 top-[1.4rem] left-[-4px] rounded-md group-hover:visible shadow-md bg-white border-t-[2px] border-t-[#715FD4]">
+            {% for database in databases %}
+                <li class="py-4 px-5 font-['Roboto'] text-sm font-medium hover:bg-[#ecebeb84]"><a href="#" class="text-[#6c6b6b]">{{database.name}}</a></li>
+            {% endfor %}
+        </ul>
+    </li>
+    <li class="group relative flex items-center space-x-1 cursor-pointer"><a class="text-[#736c6c]">Languages</a><i class="fa-solid fa-angle-down"></i>
+        <ul class="absolute invisible border-x-[1px] overflow-hidden font-['Calibri'] w-64 top-[1.4rem] left-[-4px] rounded-md group-hover:visible shadow-md bg-white border-t-[2px] border-t-[#715FD4]">
+            {% for language in languages %}
+                <li class="py-4 px-5 font-['Roboto'] text-sm font-medium hover:bg-[#ecebeb84]"><a href="#" class="text-[#6c6b6b]">{{language.name}}</a></li>
+            {% endfor %}
+        </ul>
+    </li>
+    <li class="group relative flex items-center space-x-1 cursor-pointer"><a class="text-[#736c6c]">Tutorials</a><i class="fa-solid fa-angle-down"></i>
+        <ul class="absolute invisible border-x-[1px] overflow-hidden font-['Calibri'] w-64 top-[1.4rem] left-[-4px] rounded-md group-hover:visible shadow-md bg-white border-t-[2px] border-t-[#715FD4]">
+            {% for tutorial in tutorials %}
+                <li class="py-4 px-5 font-['Roboto'] text-sm font-medium hover:bg-[#ecebeb84]"><a href="#" class="text-[#6c6b6b]">{{tutorial.name}}</a></li>
+            {% endfor %}
+        </ul>
+    </li>
+</ul>

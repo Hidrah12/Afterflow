@@ -1,8 +1,17 @@
-<div>
-    <div>
+<div class="flex items-center justify-between w-[100%] h-[4.6rem] bg-white dark:bg-slate-600 shadow-md sticky top-0">
+    <div class="flex items-center space-x-10 px-2">
         {% include 'components/navbar/logo.html' %}
+        {% include 'components/navbar/menu-options.html' %}
     </div>
-    <div>
-
+    <div class="flex items-center space-x-10 px-2">
+        {% include 'components/navbar/menu-themes.html' %}
+        {% if user.is_authenticated %}
+            {% include 'components/navbar/menu-session.html' %}
+        {% else %}
+            <ul class="flex items-center space-x-2">
+                <li><a href="{% url 'account_login' %}" class="px-4 py-2 rounded-lg bg-[#e9e8e8d4] hover:bg-[#e1e0e0d4] transition-colors">Login</a></li>
+                <li><a href="{% url 'account_signup' %}" class="px-4 py-2 rounded-lg bg-[#715FD4] text-white hover:bg-[#6454bd] transition-colors">Sing up</a></li>
+            </ul>
+        {% endif %}
     </div>
 </div>

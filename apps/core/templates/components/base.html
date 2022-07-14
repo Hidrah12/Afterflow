@@ -1,18 +1,21 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" id="html">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="{% static 'icons/icon-afterflow.ico' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'dist/output.css' %}">
+    <script src="https://kit.fontawesome.com/6a9d03678c.js" crossorigin="anonymous"></script>
     {% block extra %}{% endblock %}
-    <title>{% block title %}{% endblock %</title>
+    <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
     {% include 'components/navbar/navbar.html' %}
     {% block content_body %}
 
     {% endblock %}
+    <script src="{% static 'js/darkMode.js' %}"></script>
 </body>
 </html>
