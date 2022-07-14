@@ -1,5 +1,6 @@
 .side-panel {
     position: fixed;
+    z-index: 50;
     right: -100%;
     transition: .2s linear;
 }
