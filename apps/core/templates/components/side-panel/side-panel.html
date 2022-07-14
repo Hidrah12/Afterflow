@@ -1,35 +1,7 @@
 <aside id="side-panel" class="side-panel bg-white top-[4.6rem] w-[17rem] h-[100%] p-5 shadow-xl blgMin:invisible dark:bg-gradient-to-tr dark:from-[#151c22] dark:to-[#071118] border-t-[2px] border-t-[#715FD4] md:w-[20rem] overflow-y-auto">
-    <div class="relative my-3 text-center">
-        <form action="" method="get">
-            <input type="text" class="h-10 rounded-md p-5 dark:outline-none outline-none bg-[#f3f2f2b7] dark:bg-[#262626] dark:text-white" placeholder="Buscar contenido..." id="search-input">
-        </form>
-        <button id="button-clear" class="absolute top-2 right-2" style="display: none;"><i class="fa-solid fa-xmark text-2xl text-[#262020] dark:text-[#faf9f9c1]"></i></button>
-    </div>
+    {% include 'components/side-panel/search-form.html' %}
+    {% include 'components/side-panel/options-panel.html' %}
     
-    <h3 class="text-[#3C3636] font-['Roboto'] font-bold text-sm dark:text-white">Databases</h3>
-    <ul class="pl-5">
-        {% for database in databases %}
-            <li class="my-4 text-sm dark:text-slate-200"><a href="#">{{database.name}}</a></li>
-        {% endfor %}
-    </ul>
-    <h3 class="text-[#3C3636] font-['Roboto'] font-bold text-sm dark:text-white">Frameworks</h3>
-    <ul class="pl-5">
-        {% for framework in frameworks %}
-            <li class="my-4 text-sm dark:text-slate-200"><a href="#">{{framework.name}}</a></li>
-        {% endfor %}
-    </ul>
-    <h3 class="text-[#3C3636] font-['Roboto'] font-bold text-sm dark:text-white">Languages</h3>
-    <ul class="pl-5">
-        {% for language in languages %}
-            <li class="my-4 text-sm dark:text-slate-200"><a href="#">{{language.name}}</a></li>
-        {% endfor %}
-    </ul>
-    <h3 class="text-[#3C3636] font-['Roboto'] font-bold text-sm dark:text-white">Tutorials</h3>
-    <ul class="pl-5">
-        {% for tutorial in tutorials %}
-            <li class="my-4 text-sm dark:text-slate-200"><a href="#">{{tutorial.name}}</a></li>
-        {% endfor %}
-    </ul>
     <div class="w-[100%] h-[1px] bg-slate-400"></div>
     <ul class="flex items-center space-x-5 justify-center my-5">
         <li><a href="{% url 'account_login' %}" class="px-4 py-2 rounded-lg dark:text-white transition-colors">Login</a></li>
