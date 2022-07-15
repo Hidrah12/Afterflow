@@ -10,7 +10,7 @@
                 html.classList.remove('dark')
                 let img = document.getElementById('img-theme')
                 img.src = "../../static/images/theme/light-mode.png"
-                featuredImage.src = '../../media/featured/Captura_de_pantalla_40.png'
+                featuredImage.src = '../../static/images/featured-light-image.png'
             }
         } else {
             localStorage.setItem('theme', 'dark')
@@ -28,7 +28,7 @@ function changeTheme() {
         html.classList.remove('dark')
         localStorage.theme = 'light'
         img.src = "../../static/images/theme/light-mode.png"
-        featuredImage.src = '../../media/featured/Captura_de_pantalla_40.png'
+        featuredImage.src = '../../static/images/featured-light-image.png'
 
     } else {
         html.classList.add('dark')

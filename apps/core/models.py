@@ -32,7 +32,6 @@ class Article(models.Model):
 
     template_name = models.CharField(max_length = 50, null = True, blank = True)
     featured = models.BooleanField(null = True, blank = True)
-    image = models.ImageField(upload_to = 'featured', null = True)
     
     def __str__(self) -> str:
         return f'{self.title}'
