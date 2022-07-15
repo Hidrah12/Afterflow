@@ -634,8 +634,8 @@ video {
   margin-bottom: 0.75rem;
 }
 
-.mt-\[5rem\] {
-  margin-top: 5rem;
+.mt-\[4\.6rem\] {
+  margin-top: 4.6rem;
 }
 
 .mt-\[6rem\] {
@@ -648,10 +648,6 @@ video {
 
 .ml-2 {
   margin-left: 0.5rem;
-}
-
-.mt-\[4\.6rem\] {
-  margin-top: 4.6rem;
 }
 
 .block {
@@ -696,10 +692,6 @@ video {
 
 .w-\[100\%\] {
   width: 100%;
-}
-
-.w-\[80\%\] {
-  width: 80%;
 }
 
 .w-\[350px\] {
@@ -958,6 +950,11 @@ video {
   padding-bottom: 0.5rem;
 }
 
+.py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
 .pl-5 {
   padding-left: 1.25rem;
 }
@@ -1054,11 +1051,6 @@ video {
 .text-\[rgb\(172\2c 172\2c 172\)\] {
   --tw-text-opacity: 1;
   color: rgb(172 172 172 / var(--tw-text-opacity));
-}
-
-.text-cyan-400 {
-  --tw-text-opacity: 1;
-  color: rgb(34 211 238 / var(--tw-text-opacity));
 }
 
 .text-slate-600 {
@@ -1213,6 +1205,12 @@ video {
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
+.dark .dark\:from-\[\#071118\] {
+  --tw-gradient-from: #071118;
+  --tw-gradient-to: rgb(7 17 24 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
 .dark .dark\:via-\[\#071118\] {
   --tw-gradient-to: rgb(7 17 24 / 0);
   --tw-gradient-stops: var(--tw-gradient-from), #071118, var(--tw-gradient-to);
@@ -1294,6 +1292,38 @@ video {
     margin-right: 0px;
   }
 
+  .bxl\:mt-0 {
+    margin-top: 0px;
+  }
+
+  .bxl\:mt-1 {
+    margin-top: 0.25rem;
+  }
+
+  .bxl\:mt-\[4\.6rem\] {
+    margin-top: 4.6rem;
+  }
+
+  .bxl\:w-\[600px\] {
+    width: 600px;
+  }
+
+  .bxl\:w-\[500px\] {
+    width: 500px;
+  }
+
+  .bxl\:w-\[450px\] {
+    width: 450px;
+  }
+
+  .bxl\:w-\[420px\] {
+    width: 420px;
+  }
+
+  .bxl\:w-\[400px\] {
+    width: 400px;
+  }
+
   .bxl\:justify-around {
     justify-content: space-around;
   }
@@ -1310,6 +1340,23 @@ video {
 }
 
 @media (max-width: 1023px) {
+  .lg\:invisible {
+    visibility: hidden;
+  }
+
+  .lg\:absolute {
+    position: absolute;
+  }
+
+  .lg\:mx-10 {
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
+  }
+
+  .lg\:mt-\[6rem\] {
+    margin-top: 6rem;
+  }
+
   .lg\:w-\[400px\] {
     width: 400px;
   }
@@ -1351,8 +1398,9 @@ video {
     position: relative;
   }
 
-  .blg\:mt-\[4\.6rem\] {
-    margin-top: 4.6rem;
+  .blg\:mx-0 {
+    margin-left: 0px;
+    margin-right: 0px;
   }
 
   .blg\:mt-0 {
@@ -1396,6 +1444,14 @@ video {
 
   .md\:w-\[20rem\] {
     width: 20rem;
+  }
+
+  .md\:font-normal {
+    font-weight: 400;
+  }
+
+  .md\:font-light {
+    font-weight: 300;
   }
 }
 
