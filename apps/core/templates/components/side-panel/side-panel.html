@@ -13,7 +13,7 @@
     <div class="w-[100%] h-[1px] bg-slate-400"></div>
     <ul class="flex items-center space-x-5 justify-center my-5">
         {% if user.is_authenticated %}
-            <li><a href="{% url 'account_logout' %}" class="px-4 py-2 rounded-lg dark:text-white transition-colors">Logout <i class="fa-solid fa-right-from-bracket text-lg"></i></a></li>
+            <li class="flex space-x-2 items-center"><a href="{% url 'account_logout' %}" class="px-4 py-2 rounded-lg dark:text-white transition-colors">Logout</a><i class="fa-solid fa-right-from-bracket text-lg"></i></li>
         {% else %}
             <li><a href="{% url 'account_login' %}" class="px-4 py-2 rounded-lg dark:text-white transition-colors">Login</a></li>
             <li><a href="{% url 'account_signup' %}" class="px-4 py-2 rounded-lg dark:bg-[#1f1f28] dark:hover:bg-[#262626] dark:text-white bg-[#f3f2f2b7] hover:bg-[#e2e2e2b7] transition-colors">Sing up</a></li>
