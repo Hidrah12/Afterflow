@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Category, TypeCategory
+from .models import Category, TypeCategory, Article
 
 def get_type_categorys():
     all_type_category = TypeCategory.objects.all()
@@ -20,11 +20,13 @@ def home_view(request):
     languages = all_categorys.filter(type_category = language.id)
     tutorials = all_categorys.filter(type_category = tutorial.id)
 
+    featured_article = Article.objects.filter(featured = True).first()
     context_data = {
         'frameworks': frameworks, 
         'databases': databases,
         'languages': languages,
         'tutorials': tutorials,
+        'featured': featured_article,
     }
 
     return render(request, 'index.html', context_data)
