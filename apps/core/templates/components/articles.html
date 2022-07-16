@@ -1,0 +1,17 @@
+<section class="flex justify-center items-center space-x-20 relative overflow-hidden bg-gradient-to-br from-[#fffefe] via-slate-50 to-[#f8f8f8] dark:bg-gradient-to-br dark:from-[#131b20] dark:to-[#0d1a21]">
+    <div class="w-[60%] sm:w-[75%]" id="post-container">
+        {% for content in articles %}
+            <article class="my-14">
+                <h3 class="my-5"><a href="#" class="title text-5xl font-extrabold font-['Roboto'] my-5 hover:text-cyan-400 transition-colors dark:text-slate-50 dark:hover:text-cyan-400 xr:text-[1.5rem]">{{content.title}}</a></h3>
+                <span class="date italic text-[rgb(172,172,172)]">Publicado el {{content.publication_date}} <a href="{{content.category}}" class=" py-1 p-2 ml-2 rounded-sm text-xs font-normal bg-slate-300 text-slate-600 hover:bg-[#d8d8d8]">{{content.category}}</a></span>
+                <p class='text-lg font-light my-5 font-["Roboto"] text-slate-800 dark:text-slate-300 whitespace-pre-wrap'>{{content.summary}}</p>
+            </article>
+            <div class="w-[100%] h-[1px] bg-slate-500 my-10"></div>
+        {% endfor %}
+    </div>
+</section>
+<style>
+    .title {
+        line-height: 4rem;
+    }
+</style>

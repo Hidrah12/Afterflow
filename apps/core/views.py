@@ -20,13 +20,14 @@ def home_view(request):
     languages = all_categorys.filter(type_category = language.id)
     tutorials = all_categorys.filter(type_category = tutorial.id)
 
-    featured_article = Article.objects.filter(featured = True).first()
+    articles = Article.objects.all()
+
     context_data = {
         'frameworks': frameworks, 
         'databases': databases,
         'languages': languages,
         'tutorials': tutorials,
-        'featured': featured_article,
+        'articles': articles,
     }
 
     return render(request, 'index.html', context_data)
