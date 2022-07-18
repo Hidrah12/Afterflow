@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="{% static 'icons/icon.ico' %}">
+    <link rel="icon" href="{% static 'icons/icon-afterflow.ico' %}">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <link rel="stylesheet" href="{% static 'dist/output.css' %}">
     <script src="https://kit.fontawesome.com/6a9d03678c.js" crossorigin="anonymous"></script>
     {% block styles %}{% endblock %}
     <title>{% block title %}{% endblock %}</title>
 </head>
-<body class="flex w-[100%] h-[100%] fixed items-center">
+<body class="flex w-[100%] h-[100%] fixed items-center dark:bg-[#060f15]">
     {% block content %}
     {% endblock %}
 </body>
