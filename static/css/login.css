@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+i {
+    margin: 0 5px;
+}
+input[type="text"] {
+    padding: 5px;
+    width: 100%;
+    border-radius: 5px;
+    border: 2px solid #eeeeee;
+    outline: none;
+}
+input[type="password"] {
+    padding: 5px;
+    width: 100%;
+    border-radius: 5px;
+    border: 2px solid #eeeeee;
+    outline: none;
+}
+.social li {
+    padding: 15px 20px;
+    background-color: #EFEFEF;
+    border-radius: 5px;
+    margin-right: 1rem;
+}
+html[class="dark"] li{
+    background-color: #22293D;
+}
+.social li:hover {
+    background-color: #d4e0e6;
+}
+.social li a {
+    color: #B5B3B3;
+    font-weight: 500;
+}
+.social li a img {
+    margin-right: 5px;
+}
+label {
+    color: #a0a0a0;
+}
+input {
+    margin: 15px 0;
+    box-shadow: none;
+}
+html[class="dark"] li:hover {
+    background-color: #303649;
+}
+html[class="dark"] input {
+    background-color: #22293D;
+    border: none;
+    color: #ABAAAA;
+}
+html[class="dark"] input:focus {
+    background-color: #22293D;
+    color: #ABAAAA;
+}
