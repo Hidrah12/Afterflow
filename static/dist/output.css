@@ -889,6 +889,11 @@ video {
   border-top-width: 2px;
 }
 
+.border-t-slate-500 {
+  --tw-border-opacity: 1;
+  border-top-color: rgb(100 116 139 / var(--tw-border-opacity));
+}
+
 .border-t-\[\#715FD4\] {
   --tw-border-opacity: 1;
   border-top-color: rgb(113 95 212 / var(--tw-border-opacity));
@@ -1540,9 +1545,9 @@ video {
     margin-bottom: 1.25rem;
   }
 
-  .md\:my-8 {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+  .md\:my-4 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
   }
 
   .md\:h-\[200px\] {
