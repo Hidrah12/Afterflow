@@ -58,3 +58,14 @@ html[class="dark"] input:focus {
     background-color: #22293D;
     color: #ABAAAA;
 }
+@media screen and (max-width: 580px) {
+    input {
+        margin-top: 25px;        
+    }
+    input[type="text"] {
+        padding: 8px;
+    }
+    input[type="password"] {
+        padding: 8px;
+    }
+}
