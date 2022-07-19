@@ -1594,9 +1594,9 @@ video {
     padding: 1.5rem;
   }
 
-  .bsm\:text-3xl {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
+  .bsm\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 
   .bsm\:text-base {
