@@ -7,14 +7,14 @@ i {
     margin: 0 5px;
 }
 input[type="text"] {
-    padding: 5px;
+    padding: 8px;
     width: 100%;
     border-radius: 5px;
     border: 2px solid #eeeeee;
     outline: none;
 }
 input[type="password"] {
-    padding: 5px;
+    padding: 8px;
     width: 100%;
     border-radius: 5px;
     border: 2px solid #eeeeee;
@@ -61,11 +61,5 @@ html[class="dark"] input:focus {
 @media screen and (max-width: 580px) {
     input {
         margin-top: 25px;        
-    }
-    input[type="text"] {
-        padding: 8px;
-    }
-    input[type="password"] {
-        padding: 8px;
     }
 }
