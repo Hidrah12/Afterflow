@@ -67,5 +67,6 @@ html[class="dark"] input:focus {
     display: block;
     width: 100%;
     padding: 8px;
+    border: 2px solid #eeeeee;
     border-radius: 5px;
 }
