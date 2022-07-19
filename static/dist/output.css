@@ -1215,6 +1215,10 @@ video {
   background-color: rgb(243 242 242 / var(--tw-bg-opacity));
 }
 
+.dark .dark\:border-none {
+  border-style: none;
+}
+
 .dark .dark\:bg-\[\#060f15\] {
   --tw-bg-opacity: 1;
   background-color: rgb(6 15 21 / var(--tw-bg-opacity));
