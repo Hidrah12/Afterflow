@@ -1452,9 +1452,9 @@ video {
 }
 
 @media (max-width: 580px) {
-  .bsm\:my-5 {
-    margin-top: 1.25rem;
-    margin-bottom: 1.25rem;
+  .bsm\:my-8 {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
   }
 
   .bsm\:w-auto {
@@ -1477,6 +1477,11 @@ video {
 
   .xr\:absolute {
     position: absolute;
+  }
+
+  .xr\:my-4 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
   }
 
   .xr\:text-\[1\.3rem\] {
