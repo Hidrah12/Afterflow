@@ -70,3 +70,6 @@ html[class="dark"] input:focus {
     border: 2px solid #eeeeee;
     border-radius: 5px;
 }
+html[class="dark"] #id_email {
+    border: none;
+}
