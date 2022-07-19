@@ -63,3 +63,9 @@ html[class="dark"] input:focus {
         margin-top: 25px;        
     }
 }
+#id_email {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+}
