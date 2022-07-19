@@ -14,6 +14,7 @@ module.exports = {
 
       'bxl': {'max': '1170px'},
 
+      'lGG': {'max': '1040px'},
       'lg': {'max': '1023px'},
       // => @media (max-width: 1023px) { ... }
 

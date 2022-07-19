@@ -1,9 +1,9 @@
 <div class="flex items-center justify-between w-[100%] h-[4.6rem] bg-white dark:bg-gradient-to-tr dark:from-slate-900 dark:to-[#1a1919] shadow-md fixed top-0 z-30">
-    <div class="flex items-center space-x-10 px-4">
+    <div class="flex items-center space-x-10 bxl:space-x-5 lGG:space-x-3 px-4">
         {% include 'components/navbar/logo.html' %}
         {% include 'components/navbar/menu-options.html' %}
     </div>
-    <div class="flex items-center space-x-6 blg:space-x-3 px-4">
+    <div class="flex items-center space-x-6 bxl:space-x-3 px-4 ">
         {% include 'components/navbar/search-form.html' %}
         {% include 'components/navbar/menu-themes.html' %}
         <div class="h-[2rem] w-[2px] bg-slate-700 blg:invisible"></div>
@@ -12,8 +12,8 @@
             {% include 'components/navbar/menu-session.html' %}
         {% else %}
             <ul class="flex items-center space-x-2 font-['Calibri']">
-                <li class="blg:invisible blg:absolute"><a href="{% url 'account_login' %}" class="px-4 py-2 rounded-lg bg-[#f3f1f1d4] hover:bg-[#e0e0e0d4] transition-colors">Login</a></li>
-                <li class="blg:invisible blg:absolute"><a href="{% url 'account_signup' %}" class="px-4 py-2 rounded-lg bg-[#715FD4] text-white hover:bg-[#5e4fb4] transition-colors">Sing up</a></li>
+                <li class="blg:invisible blg:absolute"><a href="{% url 'account_login' %}" class="px-4 py-2 rounded-lg bg-[#f3f1f1d4] hover:bg-[#e0e0e0d4] bxl:text-sm transition-colors">Login</a></li>
+                <li class="blg:invisible blg:absolute"><a href="{% url 'account_signup' %}" class="px-4 py-2 rounded-lg bg-[#715FD4] text-white hover:bg-[#5e4fb4] bxl:text-sm transition-colors">Sing up</a></li>
             </ul>
         {% endif %}
         <ul class="absolute invisible blg:relative blg:visible">
