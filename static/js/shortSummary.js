@@ -4,6 +4,5 @@ Array.from(summarys).map(summary => {
         let slice = summary.innerHTML.slice(100,summary.length)
         let index = slice.lastIndexOf(' ')
         summary.innerHTML = summary.innerHTML.slice(0, index) + "..." + " <a href='#' class='text-cyan-400'>Leer más</a>"
-        
     }
 })
