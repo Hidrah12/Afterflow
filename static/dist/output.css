@@ -925,9 +925,9 @@ video {
   background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
 }
 
-.from-\[\#fffefe\] {
-  --tw-gradient-from: #fffefe;
-  --tw-gradient-to: rgb(255 254 254 / 0);
+.from-\[\#ffffff\] {
+  --tw-gradient-from: #ffffff;
+  --tw-gradient-to: rgb(255 255 255 / 0);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
