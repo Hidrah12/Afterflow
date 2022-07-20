@@ -1152,9 +1152,9 @@ video {
   color: rgb(60 54 54 / var(--tw-text-opacity));
 }
 
-.text-cyan-300 {
+.text-cyan-400 {
   --tw-text-opacity: 1;
-  color: rgb(103 232 249 / var(--tw-text-opacity));
+  color: rgb(34 211 238 / var(--tw-text-opacity));
 }
 
 .shadow-xl {
