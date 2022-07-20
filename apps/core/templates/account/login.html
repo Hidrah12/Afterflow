@@ -17,18 +17,18 @@
 <div class="w-[35rem] shadow-xl bg-white bsm:w-auto m-auto rounded-md dark:bg-gradient-to-br dark:from-[#131b20] dark:to-[#0d1a21]">
     <div class="w-[100%] rounded-md border-t-[1px] border-x-2 dark:border-none dark:bg-gradient-to-br dark:from-[#131b20] dark:to-[#0d1a21] p-10 bsm:p-6">
         <span class="flex justify-center items-center">
-            <a href="{% url 'core:home' %}" class="flex justify-center space-x-1 items-center">
+            <a href="{% url 'core:home' %}" class="flex justify-center space-x-1 items-center" title="Afterflow">
                 <img src="{% static 'images/logo-afterflow.png' %}" alt="Logo de Afterflow" class="w-12">
                 <h4 class="font-semibold text-[#747272] text-xl dark:text-[#E7E7E7]">Afterflow</h4>
             </a>
         </span>
-        <h4 class="font-bold text-[17px] text-[#747272] dark:text-[#E7E7E7]">Inicia sesión</h4>
+        <h2 class="font-bold text-[17px] text-[#747272] dark:text-[#E7E7E7]">Inicia sesión</h2>
         <ul class="social flex items-center justify-center mt-5">
             {% include "socialaccount/snippets/provider_list.html" with process="login" %}
         </ul>
         <div class="h-[1px] w-[100%] bg-slate-100 dark:bg-slate-400 my-8 bsm:my-8"></div>
-        <h4 class="font-bold text-[17px] text-[#747272] my-3 dark:text-[#E7E7E7]">O usa tu correo electrónico</h4>
-        
+        <h2 class="font-bold text-[17px] text-[#747272] my-3 dark:text-[#E7E7E7]">O usa tu correo electrónico</h2>
+    
         <form action="" method="post"> {% csrf_token %}
             {{form}}
             <span class="flex items-center justify-center">
@@ -42,13 +42,4 @@
         
     </div>
 </div>
-<script>
-    const html = document.getElementById('html')
-    if (localStorage.getItem('theme') === 'dark') {
-        html.classList.add('dark')
-    } else {
-        html.classList.remove('dark')
-    }
-</script>
-<script src="{% static 'js/addIcon.js' %}"></script>
 {% endblock %}

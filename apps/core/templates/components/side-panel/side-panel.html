@@ -3,13 +3,7 @@
     {% include 'components/side-panel/options-panel.html' %}
     
     <div class="w-[100%] h-[1px] bg-slate-400"></div>
-
-    <ul class="flex space-x-5 items-center justify-center my-5 text-2xl dark:text-slate-300">
-        <li><a href="#"><i class="fa-brands fa-github"></i></a></li>
-        <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-        <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-        <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
-    </ul>
+    {% include 'components/side-panel/social-links.html' %}
     <div class="w-[100%] h-[1px] bg-slate-400"></div>
     <ul class="flex items-center space-x-5 justify-center my-5">
         {% if user.is_authenticated %}

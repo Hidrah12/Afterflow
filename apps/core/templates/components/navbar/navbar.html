@@ -8,7 +8,7 @@
         {% include 'components/navbar/menu-themes.html' %}
         <div class="h-[2rem] w-[2px] bg-slate-700 blg:invisible"></div>
         {% if user.is_authenticated %}
-            <button onclick="showMenuSession()" class="blg:invisible blg:absolute"><i class="fa-solid fa-circle-user text-[2.7rem] text-[#e9e9e9] hover:text-[#dad9d9] dark:text-[#d2d2d2] dark:hover:text-[#f3f2f2] transition-colors blg:text-[2.5rem]"></i></button>
+            <button onclick="showMenuSession()" class="blg:invisible blg:absolute" title="Show menu session"><i class="fa-solid fa-circle-user text-[2.7rem] text-[#e9e9e9] hover:text-[#dad9d9] dark:text-[#d2d2d2] dark:hover:text-[#f3f2f2] transition-colors blg:text-[2.5rem]"></i></button>
             {% include 'components/navbar/menu-session.html' %}
         {% else %}
             <ul class="flex items-center space-x-2 font-['Calibri']">
@@ -17,7 +17,7 @@
             </ul>
         {% endif %}
         <ul class="absolute invisible blg:relative blg:visible">
-            <li><button class="outline-none" onclick="showSidePanel()"><i class="fa-solid fa-bars text-[2.5rem] text-[#3a3a3a] dark:text-[#d2d2d2] dark:hover:text-[#f3f2f2] transition-colors bsm:text-[2.3rem]"></i></button></li>
+            <li><button class="outline-none" onclick="showSidePanel()" title="Show side panel"><i class="fa-solid fa-bars text-[2.5rem] text-[#3a3a3a] dark:text-[#d2d2d2] dark:hover:text-[#f3f2f2] transition-colors bsm:text-[2.3rem]"></i></button></li>
         </ul>
     </div>
 </div>

@@ -17,17 +17,17 @@
 <div class="w-[35rem] bg-white shadow-xl dark:bg-gradient-to-br dark:from-[#131b20] dark:to-[#0d1a21] rounded-md my-2 bsm:w-auto m-auto">
     <div class="w-[100%] border-t-[1px] border-x-2 dark:border-none dark:bg-gradient-to-br dark:from-[#131b20] dark:to-[#0d1a21] p-10 bsm:p-6">
         <div class="flex justify-center items-center mb-3">
-            <a href="{% url 'core:home' %}" class="flex justify-center items-center">
+            <a href="{% url 'core:home' %}" class="flex justify-center items-center" title="Afterflow">
                 <img src="{% static 'images/logo-afterflow.png' %}" alt="logo" class="w-12">
                 <h1 class="font-semibold text-[#747272] text-xl dark:text-[#E7E7E7]">Afterflow</h1>
             </a>
         </div>
-        <h3 class="font-bold text-[17px] text-[#747272] dark:text-[#E7E7E7]">Crea tu cuenta</h3>
+        <h2 class="font-bold text-[17px] text-[#747272] dark:text-[#E7E7E7]">Crea tu cuenta</h2>
         <ul class="social flex items-center justify-center my-2">
             {% include "socialaccount/snippets/provider_list.html" with process="login" %}
         </ul>
         <div class="h-[1px] w-[100%] bg-slate-100 dark:bg-slate-400"></div>
-        <h3 class="font-bold text-[17px] text-[#747272] my-3 dark:text-[#E7E7E7]">O usa tu correo electrónico</h3>
+        <h2 class="font-bold text-[17px] text-[#747272] my-3 dark:text-[#E7E7E7]">O usa tu correo electrónico</h2>
         <form action="{% url 'account_signup' %}" method="post"> {% csrf_token %}
             {{form}}
             {% if redirect_field_value %}
@@ -42,13 +42,4 @@
         </form>
     </div>
 </div>
-<script>
-    const html = document.getElementById('html')
-    if (localStorage.getItem('theme') === 'dark') {
-        html.classList.add('dark')
-    } else {
-        html.classList.remove('dark')
-    }
-</script>
-<script src="{% static 'js/addIcon.js' %}"></script>
 {% endblock %}
