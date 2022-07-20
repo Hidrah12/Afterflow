@@ -931,9 +931,9 @@ video {
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
-.via-slate-50 {
-  --tw-gradient-to: rgb(248 250 252 / 0);
-  --tw-gradient-stops: var(--tw-gradient-from), #f8fafc, var(--tw-gradient-to);
+.via-\[\#fffefe\] {
+  --tw-gradient-to: rgb(255 254 254 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), #fffefe, var(--tw-gradient-to);
 }
 
 .to-\[\#f8f8f8\] {
