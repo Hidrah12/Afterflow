@@ -20,8 +20,8 @@ def home_view(request):
     languages = all_categorys.filter(type_category = language.id)
     tutorials = all_categorys.filter(type_category = tutorial.id)
 
-    articles = Article.objects.all()['-id']
-
+    articles = Article.objects.all().order_by('-id')
+    
     context_data = {
         'frameworks': frameworks, 
         'databases': databases,
