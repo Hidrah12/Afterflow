@@ -1501,6 +1501,15 @@ video {
 }
 
 @media (max-width: 639px) {
+  .sm\:visible {
+    visibility: visible;
+  }
+
+  .sm\:my-12 {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+
   .sm\:text-2xl {
     font-size: 1.5rem;
     line-height: 2rem;
