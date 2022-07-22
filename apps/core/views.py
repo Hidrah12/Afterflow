@@ -35,9 +35,8 @@ def home_view(request):
 
 class HomeView(ListView):
     model = Article
-    paginate_by = 4
     template_name = 'index.html'
-
+    context_object_name = 'articles'
     (framework, database, language, tutorial) = get_type_categorys()
 
     all_categorys = Category.objects.all()

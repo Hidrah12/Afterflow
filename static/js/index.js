@@ -37,3 +37,11 @@ function showOptionsMenu(name) {
         nameOption.style.display = 'none'
     }
 }
+
+function getMoreArticles() {
+    fetch("http://127.0.0.1:3000/api/articles/")
+    .then(response => response.json())
+    .then(function (data) {
+        console.log(data)
+    })
+}
