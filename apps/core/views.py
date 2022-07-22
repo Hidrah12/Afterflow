@@ -1,6 +1,5 @@
 from .models import Category, TypeCategory, Article
 from django.shortcuts import render
-from apps.core import views
 
 def get_type_categorys():
     all_type_category = TypeCategory.objects.all()
@@ -14,7 +13,6 @@ def get_type_categorys():
 
 def home_view(request):
     (framework, database, language, tutorial) = get_type_categorys()
-    views.COUNT_ARTICLES = 2
     
     all_categorys = Category.objects.all()
     frameworks = all_categorys.filter(type_category = framework.id)
@@ -29,7 +27,8 @@ def home_view(request):
         'databases': databases,
         'languages': languages,
         'tutorials': tutorials,
-        'articles': articles,
+        'articles': articles[:8],
+        'count_articles': articles.count()
     }
 
     return render(request, 'index.html', context_data)
