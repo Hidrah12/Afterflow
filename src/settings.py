@@ -20,6 +20,7 @@ BASE_APPS = [
 
 LOCAL_APPS = [
     'apps.core',
+    'apps.api',
 ]
 THIRD_APPS = [
     'django.contrib.sites',
