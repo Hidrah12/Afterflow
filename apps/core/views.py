@@ -1,6 +1,6 @@
-from django.shortcuts import render
 from .models import Category, TypeCategory, Article
-from django.views.generic import ListView
+from django.shortcuts import render
+from apps.core import views
 
 def get_type_categorys():
     all_type_category = TypeCategory.objects.all()
@@ -14,7 +14,8 @@ def get_type_categorys():
 
 def home_view(request):
     (framework, database, language, tutorial) = get_type_categorys()
-
+    views.COUNT_ARTICLES = 2
+    
     all_categorys = Category.objects.all()
     frameworks = all_categorys.filter(type_category = framework.id)
     databases = all_categorys.filter(type_category = database.id)
@@ -32,24 +33,3 @@ def home_view(request):
     }
 
     return render(request, 'index.html', context_data)
-
-class HomeView(ListView):
-    model = Article
-    template_name = 'index.html'
-    context_object_name = 'articles'
-    (framework, database, language, tutorial) = get_type_categorys()
-
-    all_categorys = Category.objects.all()
-    frameworks = all_categorys.filter(type_category = framework.id)
-    databases = all_categorys.filter(type_category = database.id)
-    languages = all_categorys.filter(type_category = language.id)
-    tutorials = all_categorys.filter(type_category = tutorial.id)
-
-    extra_context = {
-        'frameworks': frameworks, 
-        'databases': databases,
-        'languages': languages,
-        'tutorials': tutorials,
-    }
-    def get_queryset(self):
-        return Article.objects.all().order_by('-id')

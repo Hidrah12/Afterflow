@@ -9,4 +9,5 @@ Array.from(summarys).map(summary => {
 // Quitar ultima línea separadora
 let articles = document.getElementsByClassName('article')
 let lastId = Array.from(articles)[articles.length-1].id
-document.getElementById(`div-${lastId}`).style.display = 'none'
+// let div = document.getElementById(`div-${lastId}`)
+// div.style.display = 'none'
