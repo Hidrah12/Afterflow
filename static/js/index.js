@@ -20,25 +20,24 @@ function showSidePanel() {
     if (sidePanel.classList.toString().includes('panel-lateral') ){
         sidePanel.classList.remove('panel-lateral')
         block.style.display = 'none'
-    } 
-    else {
+    } else {
         sidePanel.classList.add('panel-lateral')
         block.style.display = 'block'
     }
 }
 
-function showOptionsMenu(name) {
-    let nameOption = document.getElementById(name)
-    if (nameOption.style.display === 'none') {
-        let menuOptions = document.getElementsByClassName('menu-option')
-        Array.from(menuOptions).map(ul => {
-            if (ul.style.display === 'block') {
-                ul.style.display = 'none'
+function showOptionsMenu(optionName) {
+    let optionSelected = document.getElementById(optionName)
+    if (optionSelected.style.display === 'none') {
+        let subMenus = document.getElementsByClassName('menu-option')
+        Array.from(subMenus).map(subMenu => {
+            if (subMenu.style.display === 'block') {
+                subMenu.style.display = 'none'
             }
         })
-        nameOption.style.display = 'block'
+        optionSelected.style.display = 'block'
     } else {
-        nameOption.style.display = 'none'
+        optionSelected.style.display = 'none'
     }
 }
 
