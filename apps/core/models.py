@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 class Subcategory(models.Model):
     name = models.CharField(max_length = 30)
@@ -20,6 +21,9 @@ class Category(models.Model):
     def __str__(self) -> str:
         return f'{self.name}'
 
+    def get_absolute_url(self):
+        return reverse('core:articles-from-category', args=[self.name])
+
 class Article(models.Model):
     title = models.CharField(max_length=100)
     slug = models.SlugField(null = True, blank = True, db_index = True)
@@ -36,6 +40,8 @@ class Article(models.Model):
     def __str__(self) -> str:
         return f'{self.title}'
 
+    def get_absolute_url(self):
+        return reverse('core:articles-from-category', args=[self.category])
 # 1 Django [Vistas, Templates, Forms, Models] framework
 # 2 Python null language
 # 3 MySQL null database

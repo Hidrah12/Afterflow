@@ -32,3 +32,12 @@ def home_view(request):
     }
 
     return render(request, 'index.html', context_data)
+
+def articles_from_categorys(request, category):
+    articles = Article.objects.filter(category_for_development = category)
+    context_data = {
+        'articles': articles,
+        'count_articles': articles.count(),
+        'category_name': category
+    }
+    return render(request, 'components/articles-from-categorys.html', context_data)
