@@ -7,7 +7,7 @@
 <h3 class="text-[#3C3636] font-['Roboto'] font-bold text-sm dark:text-white">Frameworks</h3>
 <ul class="pl-5">
     {% for framework in frameworks %}
-        <li class="my-4 text-sm dark:text-slate-200"><a href="#">{{framework.name}}</a></li>
+        <li class="my-4 text-sm dark:text-slate-200"><a href="{{framework.get_absolute_url}}">{{framework.name}}</a></li>
     {% endfor %}
 </ul>
 <h3 class="text-[#3C3636] font-['Roboto'] font-bold text-sm dark:text-white">Languages</h3>
