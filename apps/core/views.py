@@ -34,10 +34,21 @@ def home_view(request):
     return render(request, 'index.html', context_data)
 
 def articles_from_categorys(request, category):
+    (framework, database, language, tutorial) = get_type_categorys()
+    all_categorys = Category.objects.all()
+    frameworks = all_categorys.filter(type_category = framework.id)
+    databases = all_categorys.filter(type_category = database.id)
+    languages = all_categorys.filter(type_category = language.id)
+    tutorials = all_categorys.filter(type_category = tutorial.id)
+
     articles = Article.objects.filter(category_for_development = category)
     context_data = {
         'articles': articles,
         'count_articles': articles.count(),
-        'category_name': category
+        'category_name': category,
+        'frameworks': frameworks, 
+        'databases': databases,
+        'languages': languages,
+        'tutorials': tutorials
     }
     return render(request, 'components/articles-from-categorys.html', context_data)

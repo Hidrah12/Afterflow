@@ -9,21 +9,21 @@
     <li class="relative cursor-pointer"><button onclick="showOptionsMenu('database')" class="outline-none active:bg-[#f3f2f2] dark:active:bg-slate-600 p-2 rounded-md transition-colors text-[#736c6c] dark:text-[#d2d2d2] xl:text-sm">Databases <i class="fa-solid fa-angle-down"></i></button>
         <ul style="display: none;" id="database"class="menu-option absolute overflow-hidden font-['Calibri'] w-64 top-[3rem] left-[-4px] rounded-md shadow-md bg-white dark:bg-gradient-to-tr dark:from-slate-900 dark:to-[#1a1919] border-t-[2px] border-t-[#715FD4]">
             {% for database in databases %}
-                <li class="py-4 px-5 font-['Roboto'] text-sm font-medium hover:bg-[#ecebeb84] dark:hover:bg-[#9f9e9e76]"><a href="#" class="text-[#6c6b6b] dark:text-[#d2d2d2]">{{database.name}}</a></li>
+                <li class="py-4 px-5 font-['Roboto'] text-sm font-medium hover:bg-[#ecebeb84] dark:hover:bg-[#9f9e9e76]"><a href="{{database.get_absolute_url}}" class="text-[#6c6b6b] dark:text-[#d2d2d2]">{{database.name}}</a></li>
             {% endfor %}
         </ul>
     </li>
     <li class="relative cursor-pointer"><button onclick="showOptionsMenu('language')" class="outline-none active:bg-[#f3f2f2] dark:active:bg-slate-600 p-2 rounded-md transition-colors text-[#736c6c] dark:text-[#d2d2d2] xl:text-sm">Languages <i class="fa-solid fa-angle-down"></i></button>
         <ul style="display: none;" id="language" class="menu-option absolute overflow-hidden font-['Calibri'] w-64 top-[3rem] left-[-4px] rounded-md shadow-md bg-white dark:bg-gradient-to-tr dark:from-slate-900 dark:to-[#1a1919] border-t-[2px] border-t-[#715FD4]">
             {% for language in languages %}
-                <li class="py-4 px-5 font-['Roboto'] text-sm font-medium hover:bg-[#ecebeb84] dark:hover:bg-[#9f9e9e76]"><a href="#" class="text-[#6c6b6b] dark:text-[#d2d2d2]">{{language.name}}</a></li>
+                <li class="py-4 px-5 font-['Roboto'] text-sm font-medium hover:bg-[#ecebeb84] dark:hover:bg-[#9f9e9e76]"><a href="{{language.get_absolute_url}}" class="text-[#6c6b6b] dark:text-[#d2d2d2]">{{language.name}}</a></li>
             {% endfor %}
         </ul>
     </li>
     <li class="relative cursor-pointer"><button onclick="showOptionsMenu('tutorial')" class="outline-none active:bg-[#f3f2f2] dark:active:bg-slate-600 p-2 rounded-md transition-colors text-[#736c6c] dark:text-[#d2d2d2] xl:text-sm">Tutorials <i class="fa-solid fa-angle-down"></i></button>
         <ul style="display: none;" id="tutorial" class="menu-option absolute overflow-hidden font-['Calibri'] w-64 top-[3rem] left-[-4px] rounded-md shadow-md bg-white dark:bg-gradient-to-tr dark:from-slate-900 dark:to-[#1a1919] border-t-[2px] border-t-[#715FD4]">
             {% for tutorial in tutorials %}
-                <li class="py-4 px-5 font-['Roboto'] text-sm font-medium hover:bg-[#ecebeb84] dark:hover:bg-[#9f9e9e76]"><a href="#" class="text-[#6c6b6b] dark:text-[#d2d2d2]">{{tutorial.name}}</a></li>
+                <li class="py-4 px-5 font-['Roboto'] text-sm font-medium hover:bg-[#ecebeb84] dark:hover:bg-[#9f9e9e76]"><a href="{{tutorial.get_absolute_url}}" class="text-[#6c6b6b] dark:text-[#d2d2d2]">{{tutorial.name}}</a></li>
             {% endfor %}
         </ul>
     </li>
