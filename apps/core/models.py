@@ -1,5 +1,7 @@
 from django.db import models
 from django.urls import reverse
+from django.db.models.signals import pre_save
+from django.utils.text import slugify
 
 class Subcategory(models.Model):
     name = models.CharField(max_length = 30)
@@ -26,7 +28,7 @@ class Category(models.Model):
 
 class Article(models.Model):
     title = models.CharField(max_length=100)
-    slug = models.SlugField(null = True, blank = True, db_index = True)
+    slug = models.SlugField(null = True, blank = True, db_index = True, unique = True)
     minute_of_reading = models.CharField(max_length=10, null = True, blank = True)
     category = models.ForeignKey(Category, on_delete = models.PROTECT)
     category_for_development = models.CharField('Category Development', max_length=30)
@@ -41,6 +43,22 @@ class Article(models.Model):
 
     def get_absolute_url(self):
         return reverse('core:articles-from-category', args=[self.category])
+
+def create_slug(instance, new_slug = None):
+    slug = slugify(instance.title)
+    if new_slug != None:
+        slug = new_slug
+    article = Article.objects.filter(slug = slug).order_by('-id')
+    if article.exists():
+        new_slug = '%s-%s' % (slug, article.first().id)
+        return create_slug(instance, new_slug = new_slug)
+    return slug
+
+def pre_save_article(sender, instance, *args, **kwargs):
+    if not instance.slug:
+        instance.slug = create_slug(instance)
+
+pre_save.connect(pre_save_article, sender = Article)
 
 # 1 Django [Vistas, Templates, Forms, Models] framework
 # 2 Python null language
