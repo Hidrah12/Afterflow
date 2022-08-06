@@ -3,8 +3,7 @@
         fetch(`/api/set/`)
     }
 )();
-function showMenuSession(event) {
-    event.preventDefault()
+function showMenuSession() {
     let menuSession = document.getElementById('menu-session')
     if (menuSession.style.display === 'none') {
         menuSession.style.display = 'block'
@@ -13,11 +12,8 @@ function showMenuSession(event) {
         menuSession.style.display = 'none'
     }
 }
-let btnShowMenuSession = document.getElementById('btnShowMenuSession')
-btnShowMenuSession.addEventListener('click', showMenuSession)
 
-function showSidePanel(event) {
-    event.preventDefault()
+function showSidePanel() {
     let sidePanel = document.getElementById('side-panel')
     let block = document.getElementById('block')
     if (sidePanel.classList.toString().includes('panel-lateral') ){
@@ -28,8 +24,6 @@ function showSidePanel(event) {
         block.style.display = 'block'
     }
 }
-let btnShowSidePanel = document.getElementById('btnShowSidePanel')
-btnShowSidePanel.addEventListener('click', showSidePanel)
 
 function showOptionsMenu(optionName) {
     let optionSelected = document.getElementById(optionName)
