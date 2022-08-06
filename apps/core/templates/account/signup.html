@@ -1,21 +1,15 @@
 {% extends 'account/base.html' %}
 {% load static %}
-
 {% load i18n %}
 {% load account socialaccount %}
 {% load socialaccount %}
 {% get_providers as socialaccount_providers %}
-
 {% block styles %}
 <link rel="stylesheet" href="{% static 'css/forms.css' %}">
 {% endblock %}
-
 {% block title %}Afterflow | Signup{% endblock %}
-
-
 {% block content %}
-<div class="w-[35rem] bg-white shadow-xl dark:bg-gradient-to-br dark:from-[#131b20] dark:to-[#0d1a21] rounded-md my-2 bsm:w-auto m-auto">
-    <div class="w-[100%] border-t-[1px] border-x-2 dark:border-none dark:bg-gradient-to-br dark:from-[#131b20] dark:to-[#0d1a21] p-10 bsm:p-6">
+    <div class="w-[35rem] my-10 blg:my-0 bsm:w-auto m-auto bg-white shadow-xl border-t-[1px] border-x-2 dark:border-none dark:bg-gradient-to-br dark:from-[#131b20] dark:to-[#0d1a21] p-10 bsm:p-6">
         <div class="flex justify-center items-center mb-3">
             <a href="{% url 'core:home' %}" class="flex justify-center items-center" title="Afterflow">
                 <img src="{% static 'images/logo-afterflow.png' %}" alt="logo" class="w-12">
@@ -23,23 +17,22 @@
             </a>
         </div>
         <h2 class="font-bold text-[17px] text-[#747272] dark:text-[#E7E7E7]">Crea tu cuenta</h2>
-        <ul class="social flex items-center justify-center my-2">
+        <ul class="social flex items-center justify-center space-x-4 py-4">
             {% include "socialaccount/snippets/provider_list.html" with process="login" %}
         </ul>
         <div class="h-[1px] w-[100%] bg-slate-100 dark:bg-slate-400"></div>
-        <h2 class="font-bold text-[17px] text-[#747272] my-3 dark:text-[#E7E7E7]">O usa tu correo electrónico</h2>
+        <h2 class="font-bold text-[17px] text-[#747272] dark:text-[#E7E7E7] py-4">O usa tu correo electrónico</h2>
         <form action="{% url 'account_signup' %}" method="post"> {% csrf_token %}
             {{form}}
             {% if redirect_field_value %}
                 <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
             {% endif %}
             <div class="flex items-center justify-center">
-                <input type="submit" value="Registrarme" class="px-5 py-2 rounded-sm font-medium cursor-pointer text-white bg-pink-800 hover:bg-pink-600 dark:bg-[#36abdd] dark:text-white dark:hover:bg-[#309ac8]">
+                <input type="submit" value="Registrarme" class="w-[100%] px-5 py-2 rounded-sm font-medium cursor-pointer text-white bg-pink-800 hover:bg-pink-600 dark:bg-[#36abdd] dark:text-white dark:hover:bg-[#309ac8]">
             </div>
-            <div class="text-center py-2">
-                <p class="text-[#888888]">¿Ya tienes una cuenta? <a href="{% url 'account_login' %}" class="text-pink-800 hover:text-pink-600 dark:text-green-600">Inicia sesión</a></p>
+            <div class="text-center">
+                <p class="text-[#888888]">¿Ya tienes una cuenta? <a href="{% url 'account_login' %}" class="text-pink-800 hover:text-pink-600 dark:text-[#36abdd]">Inicia sesión</a></p>
             </div>
         </form>
     </div>
-</div>
 {% endblock %}

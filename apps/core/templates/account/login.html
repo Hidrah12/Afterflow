@@ -1,45 +1,36 @@
 {% extends 'account/base.html' %}
 {% load static %}
-
 {% load i18n %}
 {% load account socialaccount %}
 {% load socialaccount %}
 {% get_providers as socialaccount_providers %}
-
 {% block styles %}
 <link rel="stylesheet" href="{% static 'css/forms.css' %}">
 {% endblock %}
-
 {% block title %}Afterflow | Login{% endblock %}
-
 {% block content %}
-
-<div class="w-[35rem] shadow-xl bg-white bsm:w-auto m-auto rounded-md dark:bg-gradient-to-br dark:from-[#131b20] dark:to-[#0d1a21]">
-    <div class="w-[100%] rounded-md border-t-[1px] border-x-2 dark:border-none dark:bg-gradient-to-br dark:from-[#131b20] dark:to-[#0d1a21] p-10 bsm:p-6">
+    <div class="w-[35rem] my-10 blg:my-0 bsm:w-auto m-auto bg-white shadow-xl border-t-[1px] border-x-2 dark:border-none dark:bg-gradient-to-br dark:from-[#131b20] dark:to-[#0d1a21] p-10 bsm:p-6">
         <span class="flex justify-center items-center">
             <a href="{% url 'core:home' %}" class="flex justify-center space-x-1 items-center" title="Afterflow">
                 <img src="{% static 'images/logo-afterflow.png' %}" alt="Logo de Afterflow" class="w-12">
                 <h4 class="font-semibold text-[#747272] text-xl dark:text-[#E7E7E7]">Afterflow</h4>
             </a>
         </span>
-        <h2 class="font-bold text-[17px] text-[#747272] dark:text-[#E7E7E7]">Inicia sesión</h2>
-        <ul class="social flex items-center justify-center mt-5">
+        <h2 class="font-bold text-[17px] my-4 text-[#747272] dark:text-[#E7E7E7]">Inicia sesión</h2>
+        <ul class="social flex justify-center space-x-4">
             {% include "socialaccount/snippets/provider_list.html" with process="login" %}
         </ul>
-        <div class="h-[1px] w-[100%] bg-slate-100 dark:bg-slate-400 my-8 bsm:my-8"></div>
-        <h2 class="font-bold text-[17px] text-[#747272] my-3 dark:text-[#E7E7E7]">O usa tu correo electrónico</h2>
-    
+        <div class="h-[1px] w-[100%] bg-slate-100 dark:bg-slate-500 my-4 bsm:my-8"></div>
+        <h2 class="font-bold text-[17px] text-[#747272] my-2 dark:text-[#E7E7E7]">O usa tu correo electrónico</h2>
         <form action="" method="post"> {% csrf_token %}
             {{form}}
             <span class="flex items-center justify-center">
-                <input type="submit" value="Iniciar sesión" class="px-5 py-2 rounded-sm font-medium cursor-pointer text-white bg-pink-800 hover:bg-pink-600 dark:bg-[#36abdd] dark:text-white dark:hover:bg-[#309ac8]">
+                <input type="submit" value="Iniciar sesión" class="w-[100%] px-5 py-2 rounded-sm font-medium cursor-pointer text-white bg-pink-800 hover:bg-pink-600 dark:bg-[#36abdd] dark:text-white dark:hover:bg-[#309ac8]">
             </span>
-            <span class="text-center py-2">
-                <p class="text-[#888888] py-2">¿No tienes una cuenta? <a href="{% url 'account_signup' %}" class="text-pink-800 hover:text-pink-600 dark:text-green-600">Regístrate</a></p>
-                <p class="text-pink-800"><a href="{% url 'account_reset_password' %}" class="hover:text-pink-600 dark:text-green-600">¿Olvidaste tu contraseña?</a></p>
+            <span class="text-center">
+                <p class="text-[#888888] py-1">¿No tienes una cuenta? <a href="{% url 'account_signup' %}" class="text-pink-800 hover:text-pink-600 dark:text-[#36abdd]">Regístrate</a></p>
+                <p class="text-pink-800"><a href="{% url 'account_reset_password' %}" class="hover:text-pink-600 dark:text-[#36abdd]">¿Olvidaste tu contraseña?</a></p>
             </span>
         </form>
-        
     </div>
-</div>
 {% endblock %}

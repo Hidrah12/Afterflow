@@ -6,38 +6,44 @@
 i {
     margin: 0 5px;
 }
+input {
+    border: 1px solid #eeeeee;
+}
 input[type="text"] {
     padding: 8px;
     width: 100%;
     border-radius: 5px;
-    border: 2px solid #eeeeee;
+    border: 1px solid #eeeeee;
     outline: none;
 }
 input[type="password"] {
     padding: 8px;
     width: 100%;
     border-radius: 5px;
-    border: 2px solid #eeeeee;
+    border: 1px solid #eeeeee;
     outline: none;
 }
-.social li {
+.social li {   
     padding: 15px 20px;
     background-color: #f5f4f4;
     border-radius: 5px;
-    margin-right: 1rem;
 }
 html[class="dark"] li{
     background-color: #22293D;
 }
+html[class="dark"] li a {
+    color: #b1b1b1;
+}
 .social li:hover {
-    background-color: #d4e0e6;
+    background-color: #eaf0f3;
+    cursor: pointer;
 }
 .social li a {
-    color: #a2a0a0;
+    color: #807f7f;
     font-weight: 500;
 }
 .social li a img {
-    margin-right: 5px;
+    margin-right: 8px;
 }
 label {
     color: #a0a0a0;
