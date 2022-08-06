@@ -33,7 +33,6 @@ class Article(models.Model):
     summary = models.TextField()
     publication_date = models.DateTimeField(auto_now_add = True)
     last_modification = models.DateTimeField(auto_now = True)
-
     template_name = models.CharField(max_length = 50, null = True, blank = True)
     featured = models.BooleanField(null = True, blank = True)
     
@@ -42,6 +41,7 @@ class Article(models.Model):
 
     def get_absolute_url(self):
         return reverse('core:articles-from-category', args=[self.category])
+
 # 1 Django [Vistas, Templates, Forms, Models] framework
 # 2 Python null language
 # 3 MySQL null database

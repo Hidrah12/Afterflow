@@ -21,7 +21,7 @@ BASE_APPS = [
 LOCAL_APPS = [
     'apps.core',
     'apps.api',
-    'apps.articles',
+    'apps.content',
 ]
 THIRD_APPS = [
     'django.contrib.sites',
@@ -60,6 +60,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'apps.core.context_processors.get_categorys',
             ],
         },
     },
@@ -106,9 +107,6 @@ USE_TZ = True
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
-
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 

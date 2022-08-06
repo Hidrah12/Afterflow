@@ -1,11 +1,6 @@
-{% extends 'components/base.html' %}
 {% load static %}
-{% block title %}Afterflow{% endblock %}
 
-{% block content_body %}
 <div class="mt-[4.6rem] overflow-hidden h-[250px] sticky top-[4.6rem] md:h-[200px]">
     <div class="h-[100%] w-[100%] absolute bg-slate-700/30"></div>
     <img src="{% static 'images/cover.jpg' %}" alt="Cover"> 
 </div>
-{% include 'components/articles.html' %}
-{% endblock %}

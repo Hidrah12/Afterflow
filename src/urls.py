@@ -8,8 +8,7 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('', include('apps.core.urls')),
     path('api/', include('apps.api.urls')),
-    path('post/', include('apps.articles.urls')),
+    path('post/', include('apps.content.urls')),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)
-urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

@@ -1,54 +1,27 @@
-from .models import Category, TypeCategory, Article
+from .models import Article
 from django.shortcuts import render
+from django.views.generic import ListView
 
-def get_type_categorys():
-    all_type_category = TypeCategory.objects.all()
-    framework = all_type_category.get(name = 'framework')
-    database = all_type_category.get(name = 'database')
-    language = all_type_category.get(name = 'language')
-    tutorial = all_type_category.get(name = 'tutorial')
+class HomeView(ListView):
+    context_object_name = 'articles'
+    template_name = 'public/index.html'
+
+    def get_queryset(self):
+        self.articles = Article.objects.all().order_by('-id')[:8]
+        return self.articles
     
-    return (framework, database, language, tutorial)
-    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['total_items'] = self.articles.count()
+        return context
 
-def home_view(request):
-    (framework, database, language, tutorial) = get_type_categorys()
-    
-    all_categorys = Category.objects.all()
-    frameworks = all_categorys.filter(type_category = framework.id)
-    databases = all_categorys.filter(type_category = database.id)
-    languages = all_categorys.filter(type_category = language.id)
-    tutorials = all_categorys.filter(type_category = tutorial.id)
+def articles_from_a_category(request, category_name):
+    articles = Article.objects.filter(category_for_development = category_name)
 
-    articles = Article.objects.all().order_by('-id')
-
-    context_data = {
-        'frameworks': frameworks, 
-        'databases': databases,
-        'languages': languages,
-        'tutorials': tutorials,
-        'articles': articles[:8],
-        'count_articles': articles.count()
-    }
-
-    return render(request, 'index.html', context_data)
-
-def articles_from_categorys(request, category):
-    (framework, database, language, tutorial) = get_type_categorys()
-    all_categorys = Category.objects.all()
-    frameworks = all_categorys.filter(type_category = framework.id)
-    databases = all_categorys.filter(type_category = database.id)
-    languages = all_categorys.filter(type_category = language.id)
-    tutorials = all_categorys.filter(type_category = tutorial.id)
-
-    articles = Article.objects.filter(category_for_development = category)
     context_data = {
         'articles': articles,
-        'count_articles': articles.count(),
-        'category_name': category,
-        'frameworks': frameworks, 
-        'databases': databases,
-        'languages': languages,
-        'tutorials': tutorials
+        'total_items': articles.count(),
+        'category_name': category_name
     }
-    return render(request, 'components/articles-from-categorys.html', context_data)
+    
+    return render(request, 'public/articles/articles-from-category.html', context_data)

@@ -1,22 +1,22 @@
-<h3 class="text-[#3C3636] font-['Roboto'] font-bold text-sm dark:text-white">Databases</h3>
+<span class="text-[#3C3636] font-['Roboto'] font-bold text-sm dark:text-white">Databases</span>
 <ul class="pl-5">
     {% for database in databases %}
         <li class="my-4 text-sm dark:text-slate-200"><a href="{{database.get_absolute_url}}">{{database.name}}</a></li>
     {% endfor %}
 </ul>
-<h3 class="text-[#3C3636] font-['Roboto'] font-bold text-sm dark:text-white">Frameworks</h3>
+<span class="text-[#3C3636] font-['Roboto'] font-bold text-sm dark:text-white">Frameworks</span>
 <ul class="pl-5">
     {% for framework in frameworks %}
         <li class="my-4 text-sm dark:text-slate-200"><a href="{{framework.get_absolute_url}}">{{framework.name}}</a></li>
     {% endfor %}
 </ul>
-<h3 class="text-[#3C3636] font-['Roboto'] font-bold text-sm dark:text-white">Languages</h3>
+<span class="text-[#3C3636] font-['Roboto'] font-bold text-sm dark:text-white">Languages</span>
 <ul class="pl-5">
     {% for language in languages %}
         <li class="my-4 text-sm dark:text-slate-200"><a href="{{language.get_absolute_url}}">{{language.name}}</a></li>
     {% endfor %}
 </ul>
-<h3 class="text-[#3C3636] font-['Roboto'] font-bold text-sm dark:text-white">Tutorials</h3>
+<span class="text-[#3C3636] font-['Roboto'] font-bold text-sm dark:text-white">Tutorials</span>
 <ul class="pl-5">
     {% for tutorial in tutorials %}
         <li class="my-4 text-sm dark:text-slate-200"><a href="{{tutorial.get_absolute_url}}">{{tutorial.name}}</a></li>
