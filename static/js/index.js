@@ -68,5 +68,3 @@ function getMoreArticles(event) {
         })
     })
 }
-let btnGetMoreArticles = document.getElementById('btnGetMoreArticles')
-btnGetMoreArticles.addEventListener('click', getMoreArticles)
