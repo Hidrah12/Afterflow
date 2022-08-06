@@ -4,7 +4,7 @@
             <article id="{{content.id}}" class="article last:mb-10 my-24 relative">
                 <h2 class="my-5 "><a href="{% url 'content:item-details' content.slug %}" class="title text-5xl sm:text-3xl font-bold font-['FiraCode NF'] my-5 hover:text-cyan-400 transition-colors dark:text-slate-50 dark:hover:text-cyan-400 xr:text-[1.3rem]" title="{{content.title}}">{{content.title}}</a></h2>
                 <span class="italic text-[rgb(172,172,172)]">Publicado el {{content.publication_date}} <a href="{{content.get_absolute_url}}" class="py-1 p-2 ml-2 rounded-sm text-xs font-normal bg-[#f3f1f1d4] text-slate-600 hover:bg-[#d8d8d8]">{{content.category}}</a></span>
-                <p class='paragraph text-xl sm:text-base leading-8 font-light my-5 font-["Roboto"] text-slate-800 dark:text-slate-300 whitespace-pre-wrap'>{{content.summary}}</p>
+                <p class='paragraph text-xl sm:text-base text-justify leading-8 font-light my-5 font-["Roboto"] text-slate-800 dark:text-slate-300 whitespace-pre-wrap'>{{content.summary}}</p>
             </article>
             <!-- <div id="div-{{content.id}}" class="w-[100%] invisible sm:visible h-[1px] bg-slate-500"></div> -->
         {% endfor %}
@@ -12,6 +12,6 @@
 </section>
 {% if total_items > 8 %}
 <div class="text-center my-5">
-    <button id="get-articles" class="bottom-0 px-10 py-2 rounded-md text-white bg-cyan-800 hover:bg-cyan-900 dark:bg-cyan-600 dark:bg-gradient-to-r dark:from-cyan-500 dark:to-indigo-600" onclick="getMoreArticles()">Buscar más articulos</button>
+    <button id="btnGetMoreArticles" class="bottom-0 px-10 py-2 rounded-md text-white bg-cyan-800 hover:bg-cyan-900 dark:bg-cyan-600 dark:bg-gradient-to-r dark:from-cyan-500 dark:to-indigo-600">Buscar más articulos</button>
 </div>
 {% endif %}
