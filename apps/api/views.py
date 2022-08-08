@@ -1,5 +1,5 @@
 from rest_framework.decorators import api_view
-from .serializers import ArticleSerializer
+from .serializers import ArticleSerializer, SearchArticleSerializer
 from rest_framework.response import Response
 from apps.core.models import Article
 from rest_framework import status
@@ -38,4 +38,16 @@ def get_more_articles(request):
 
     else:
 
+        return Response(status = status.HTTP_405_METHOD_NOT_ALLOWED)
+
+@api_view(['GET'])
+def search_article(request, value):
+    if request.method == 'GET':
+        articles = Article.objects.filter(title__icontains = value)
+        if articles:
+            articles_serializer = SearchArticleSerializer(articles, many = True)
+            return Response(articles_serializer.data, status = status.HTTP_200_OK)
+        else:
+            return Response({'message': 'No hay coincidencias'}, status = status.HTTP_204_NO_CONTENT)
+    else:
         return Response(status = status.HTTP_405_METHOD_NOT_ALLOWED)

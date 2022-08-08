@@ -2,7 +2,11 @@
 let summarys = document.getElementsByClassName('paragraph')
 Array.from(summarys).forEach(summary => {
     if (summary.innerHTML.length >= 100) {
-        summary.innerHTML = summary.innerHTML.slice(0, 200) + "..." + ` <a href='#' class='read-more text-cyan-400 hover:text-cyan-500 text-base'>Leer más</a>`
+        let index = 200
+        while (summary.innerHTML[index] != ' ') {
+            index += 1
+        }
+        summary.innerHTML = summary.innerHTML.slice(0, index) + "..." + ` <a href='#' class='read-more text-cyan-400 hover:text-cyan-500 text-base'>Leer más</a>`
     }
 })
 let urls = []

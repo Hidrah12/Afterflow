@@ -68,3 +68,26 @@ function getMoreArticles(event) {
         })
     })
 }
+
+function search(value) {
+    if (value != '' && value != ' ') {
+        let itemsFound = document.getElementById('items-found')
+        itemsFound.innerHTML = ''
+        itemsFound.style.display = 'block'
+        fetch(`/api/search/${value}`)
+        .then(response => response.json())
+        .then( (data) => {
+            if (data['message']) {
+                itemsFound.innerHTML = `<span>${data['message']}</span>`
+            }
+            data.forEach(element => {
+                itemsFound.innerHTML += `<a href='/post/${element.slug}' class='block dark:text-white dark:hover:bg-slate-600 dark:hover:text-cyan-400 text-slate-800 my-2 mx-2 p-2 hover:text-cyan-500 hover:bg-slate-50'>${element.title}</a>`
+            })
+        })   
+    }
+}
+
+function removeCoincidences() {
+    let itemsFound = document.getElementById('items-found')
+    itemsFound.style.display = 'none'
+}

@@ -6,3 +6,8 @@ class ArticleSerializer(serializers.ModelSerializer):
         model = Article
         fields = ['id', 'title', 'slug', 'category_for_development',
             'summary', 'publication_date', 'template_name']
+
+class SearchArticleSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Article
+        fields = ['id', 'title', 'slug']
