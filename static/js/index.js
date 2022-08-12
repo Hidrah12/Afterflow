@@ -68,9 +68,17 @@ function getMoreArticles(event) {
         })
     })
 }
-
+function removeSubMenus() {
+    let subMenus = document.getElementsByClassName('menu-option')
+    Array.from(subMenus).map(subMenu => {
+        if (subMenu.style.display === 'block') {
+            subMenu.style.display = 'none'
+        }
+    })
+}
 function search(value) {
     if (value != '' && value != ' ') {
+        removeSubMenus()
         let itemsFound = document.getElementById('items-found')
         itemsFound.innerHTML = ''
         itemsFound.style.display = 'block'
