@@ -7,7 +7,7 @@ from rest_framework import status
 total_items = 8
 
 @api_view(['GET'])
-def set_count(request):
+def set_count_api_view(request):
     global total_items
 
     if request.method == 'GET':
@@ -18,7 +18,7 @@ def set_count(request):
         return Response(status = status.HTTP_405_METHOD_NOT_ALLOWED)
 
 @api_view(["GET"])
-def get_more_articles(request):
+def get_more_articles_api_view(request):
     global total_items
 
     if request.method == 'GET':
@@ -41,7 +41,7 @@ def get_more_articles(request):
         return Response(status = status.HTTP_405_METHOD_NOT_ALLOWED)
 
 @api_view(['GET'])
-def search_article(request, value):
+def search_article_api_view(request, value):
     if request.method == 'GET':
         articles = Article.objects.filter(title__icontains = value)
         if articles:
@@ -50,4 +50,5 @@ def search_article(request, value):
         else:
             return Response({'message': 'No hay coincidencias'}, status = status.HTTP_204_NO_CONTENT)
     else:
+        
         return Response(status = status.HTTP_405_METHOD_NOT_ALLOWED)
