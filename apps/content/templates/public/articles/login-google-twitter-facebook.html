@@ -1,5 +1,13 @@
 {% extends 'base.html' %}
 {% block title %}{{article.title}}{% endblock %}
 {% block content %}
-<h1>{{article.title}}</h1>
+<section class="mt-[6rem] p-20">
+	<div>
+		<span class="italic text-[rgb(172,172,172)]">
+		Publicado el {{article.publication_date}}
+		</span>
+	</div>
+	<h1 class="text-6xl font-bold w-[70%] font-['Open Sans'] mt-5">{{article.title}}</h1>
+	<img src="" alt="">
+</section>
 {% endblock %}

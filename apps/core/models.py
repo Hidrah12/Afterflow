@@ -37,6 +37,7 @@ class Article(models.Model):
     last_modification = models.DateTimeField(auto_now = True)
     template_name = models.CharField(max_length = 50, null = True, blank = True)
     featured = models.BooleanField(null = True, blank = True)
+    main_image = models.ImageField(upload_to = 'article_image/', blank = True)
     
     def __str__(self) -> str:
         return f'{self.title}'
