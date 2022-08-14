@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from apps.core.models import Article    
+from apps.core.models import Article
 
 def item_details_view(request, slug):
     article = Article.objects.get(slug = slug)
