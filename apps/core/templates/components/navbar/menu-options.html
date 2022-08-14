@@ -1,29 +1,29 @@
-<ul class="flex items-center space-x-8 bxl:space-x-2 font-['Open Sans'] text-slate-600 dark:text-[#d2d2d2] blg:invisible blg:absolute">
+<ul class="flex items-center space-x-8 font-['Open Sans'] text-slate-600 dark:text-[#d2d2d2] blg:invisible blg:absolute">
     <li class="relative cursor-pointer"><button onclick="showOptionsMenu('framework')" class="text-sm outline-none active:bg-[#f3f2f2] dark:active:bg-slate-600 p-2 rounded-md transition-colors dark:text-[#d2d2d2] xl:text-sm">Frameworks</button>
-        <ul style="display: none;" id="framework" class="menu-option absolute overflow-hidden w-64 top-[3rem] left-[-4px] rounded-md shadow-md bg-white dark:bg-gradient-to-tr dark:from-[#151f24] dark:to-[#1a1919] border-t-[2px] border-t-[#7c66fa]">
+        <ul style="display: none;" id="framework" class="menu-option p-5 absolute overflow-hidden w-80 top-[3rem] left-[-4px] rounded-lg shadow-md bg-white dark:bg-gradient-to-tr dark:from-[#151f24] dark:to-[#1a1919] border-t-[2px] border-t-[#7c66fa]">
             {% for framework in frameworks %}
-                <li class="py-4 px-5 text-sm font-medium hover:bg-[#ecebeb84] dark:hover:bg-slate-600"><a href="{{framework.get_absolute_url}}" class="text-[#6c6b6b] dark:text-[#d2d2d2]">{{framework.name}}</a></li>
+                <li class="p-5 text-sm hover:rounded-lg font-medium hover:bg-[#c5e6eb3d] transition-all dark:hover:bg-slate-600"><a href="{{framework.get_absolute_url}}" class="text-[#575656] dark:text-[#d2d2d2]">{{framework.name}}</a></li>
             {% endfor %}
         </ul> 
     </li>
     <li class="relative cursor-pointer"><button onclick="showOptionsMenu('database')" class="text-sm outline-none active:bg-[#f3f2f2] dark:active:bg-slate-600 p-2 rounded-md transition-colors dark:text-[#d2d2d2] xl:text-sm">Databases</button>
-        <ul style="display: none;" id="database" class="menu-option absolute overflow-hidden w-64 top-[3rem] left-[-4px] rounded-md shadow-md bg-white dark:bg-gradient-to-tr dark:from-[#151f24] dark:to-[#1a1919] border-t-[2px] border-t-[#715FD4]">
+        <ul style="display: none;" id="database" class="menu-option p-5 absolute overflow-hidden w-80 top-[3rem] left-[-4px] rounded-md shadow-md bg-white dark:bg-gradient-to-tr dark:from-[#151f24] dark:to-[#1a1919] border-t-[2px] border-t-[#715FD4]">
             {% for database in databases %}
-                <li class="py-4 px-5 text-sm font-medium hover:bg-[#ecebeb84] dark:hover:bg-slate-600"><a href="{{database.get_absolute_url}}" class="text-[#6c6b6b] dark:text-[#d2d2d2]">{{database.name}}</a></li>
+                <li class="p-5 text-sm hover:rounded-lg font-medium hover:bg-[#c5e6eb3d] transition-all dark:hover:bg-slate-600"><a href="{{database.get_absolute_url}}" class="text-[#6c6b6b] dark:text-[#d2d2d2]">{{database.name}}</a></li>
             {% endfor %}
         </ul>
     </li>
     <li class="relative cursor-pointer"><button onclick="showOptionsMenu('language')" class="text-sm outline-none active:bg-[#f3f2f2] dark:active:bg-slate-600 p-2 rounded-md transition-colors dark:text-[#d2d2d2] xl:text-sm">Languages</button>
-        <ul style="display: none;" id="language" class="menu-option absolute overflow-hidden w-64 top-[3rem] left-[-4px] rounded-md shadow-md bg-white dark:bg-gradient-to-tr dark:from-[#151f24] dark:to-[#1a1919] border-t-[2px] border-t-[#715FD4]">
+        <ul style="display: none;" id="language" class="menu-option p-5 absolute overflow-hidden w-80 top-[3rem] left-[-4px] rounded-md shadow-md bg-white dark:bg-gradient-to-tr dark:from-[#151f24] dark:to-[#1a1919] border-t-[2px] border-t-[#715FD4]">
             {% for language in languages %}
-                <li class="py-4 px-5 text-sm font-medium hover:bg-[#ecebeb84] dark:hover:bg-slate-600"><a href="{{language.get_absolute_url}}" class="text-[#6c6b6b] dark:text-[#d2d2d2]">{{language.name}}</a></li>
+                <li class="p-5 text-sm hover:rounded-lg font-medium hover:bg-[#c5e6eb3d] transition-all dark:hover:bg-slate-600"><a href="{{language.get_absolute_url}}" class="text-[#6c6b6b] dark:text-[#d2d2d2]">{{language.name}}</a></li>
             {% endfor %}
         </ul>
     </li>
     <li class="relative cursor-pointer"><button onclick="showOptionsMenu('tutorial')" class="text-sm outline-none active:bg-[#f3f2f2] dark:active:bg-slate-600 p-2 rounded-md transition-colors dark:text-[#d2d2d2] xl:text-sm">Tutorials</i></button>
-        <ul style="display: none;" id="tutorial" class="menu-option absolute overflow-hidden w-64 top-[3rem] left-[-4px] rounded-md shadow-md bg-white dark:bg-gradient-to-tr dark:from-[#151f24] dark:to-[#1a1919] border-t-[2px] border-t-[#715FD4]">
+        <ul style="display: none;" id="tutorial" class="menu-option p-5 absolute overflow-hidden w-80 top-[3rem] left-[-4px] rounded-md shadow-md bg-white dark:bg-gradient-to-tr dark:from-[#151f24] dark:to-[#1a1919] border-t-[2px] border-t-[#715FD4]">
             {% for tutorial in tutorials %}
-                <li class="py-4 px-5 text-sm font-medium hover:bg-[#ecebeb84] dark:hover:bg-slate-600"><a href="{{tutorial.get_absolute_url}}" class="text-[#6c6b6b] dark:text-[#d2d2d2]">{{tutorial.name}}</a></li>
+                <li class="p-5 text-sm hover:rounded-lg font-medium hover:bg-[#c5e6eb3d] transition-all dark:hover:bg-slate-600"><a href="{{tutorial.get_absolute_url}}" class="text-[#6c6b6b] dark:text-[#d2d2d2]">{{tutorial.name}}</a></li>
             {% endfor %}
         </ul>
     </li>
