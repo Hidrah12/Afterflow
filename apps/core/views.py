@@ -15,7 +15,7 @@ class HomeView(ListView):
         context['total_items'] = self.articles.count()
         return context
 
-def articles_from_a_category(request, category_name):
+def articles_from_a_category_view(request, category_name):
     articles = Article.objects.filter(category_for_development = category_name)
 
     context_data = {
