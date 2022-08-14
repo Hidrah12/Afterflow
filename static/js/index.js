@@ -89,7 +89,7 @@ function search(value) {
                 itemsFound.innerHTML = `<span>${data['message']}</span>`
             }
             data.forEach(element => {
-                itemsFound.innerHTML += `<a href='/post/${element.slug}' class='block dark:text-white dark:hover:bg-slate-600 dark:hover:text-cyan-400 text-slate-800 my-2 mx-2 p-2 hover:text-cyan-500 hover:bg-slate-50'>${element.title}</a>`
+                itemsFound.innerHTML += `<a href='/articulo/${element.slug}' class='block dark:text-white dark:hover:bg-slate-600 dark:hover:text-cyan-400 text-slate-800 my-2 mx-2 p-2 hover:text-cyan-500 hover:bg-slate-50'>${element.title}</a>`
             })
         })   
     }

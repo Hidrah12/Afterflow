@@ -1,5 +1,5 @@
-from rest_framework.decorators import api_view
 from .serializers import ArticleSerializer, SearchArticleSerializer
+from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from apps.core.models import Article
 from rest_framework import status
