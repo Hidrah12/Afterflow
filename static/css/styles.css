@@ -10,3 +10,14 @@
 .title {
     line-height: 4rem;
 }
+
+.content_summary {
+    color: #534f4c;
+    font-size: 1.125rem/* 18px */;
+    line-height: 1.75rem;
+    text-align: justify;
+    margin-top: 2.5rem;
+}
+html[class="dark"] .content_summary {
+    color: rgb(189,188,188);
+}
