@@ -1,13 +1,10 @@
 {% extends 'base.html' %}
 {% block title %}{{article.title}}{% endblock %}
+{% block date %}{{article.publication_date}}{% endblock %}
+{% block title_article %}{{article.title}}{% endblock %}
+{% block image_url %}{{article.main_image.url}}{% endblock %}
 {% block content %}
-<section class="mt-[6rem] p-20">
-	<div>
-		<span class="italic text-[rgb(172,172,172)]">
-		Publicado el {{article.publication_date}}
-		</span>
-	</div>
-	<h1 class="text-6xl font-bold w-[70%] font-['Open Sans'] mt-5">{{article.title}}</h1>
-	<img src="" alt="">
-</section>
+<p class="mt-10 text-slate-500 dark:text-[rgb(189,188,188)] text-justify text-lg">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam inventore corrupti nihil molestiae alias at, accusantium pariatur odio fugit nam praesentium similique ut, aliquid voluptatum id non fugiat sunt autem.
+	Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam voluptates quisquam dolores iure atque, ut at pariatur et impedit fugiat debitis porro molestiae aliquam culpa tenetur illo vitae! Dolores, aut?
+</p>
 {% endblock %}

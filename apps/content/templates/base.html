@@ -11,14 +11,26 @@
 	{% block meta_options %}{% endblock %}
 	<title>{% block title %}{% endblock %}</title>
 </head>
-<body>
+<body class="dark:bg-gradient-to-br dark:from-[#131b20] dark:to-[#0d1a21]">
 	{% include 'components/navbar/navbar.html' %}
     {% include 'components/block.html' %}
     {% include 'components/side-panel/side-panel.html' %}
 
-	{% block content %}
+	<section class="mt-[6rem] px-28 blg:px-16 md:px-10 bsm:px-10 py-16 blg:py-10 flex flex-wrap">
+		<section class="w-[80%] lGG:w-[85%] m-auto blg:w-[95%] bsm:w-[100%]">
+			<div class="flex justify-between flex-wrap items-center">
+				<span class="italic text-[rgb(172,172,172)] bsm:text-sm">Publicado el {% block date %}{% endblock %}</span>
+				{% include 'components/side-panel/social-links.html' %}
+			</div>
+			<div>
+				<h1 class="text-6xl bsm:text-4xl font-bold font-['Open Sans'] mt-8 mb-20 dark:text-white leading-[4.2rem]">{% block title_article %}{% endblock %}</h1>
+				<img src="{% block image_url %}{% endblock %}" alt="Imagen principal del articulo" class="w-[100%] m-auto object-cover object-top rounded-md">
+			</div>
+			{% block content %}
 
-	{% endblock %}
+			{% endblock %}
+		</section>
+	</section>
 
 	<script src="{% static 'js/index.js' %}"></script>
     <script src="{% static 'js/darkMode.js' %}"></script>
