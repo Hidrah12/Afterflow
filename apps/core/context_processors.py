@@ -1,4 +1,4 @@
-from .models import TypeCategory, Category
+from .models import TypeCategory, Category, Cover
 
 def get_categorys(request):
 	all_types_of_categories = TypeCategory.objects.all()
@@ -21,3 +21,7 @@ def get_categorys(request):
 	}
 	
 	return context_data
+
+def get_image_cover(requets):
+	image_ = Cover.objects.first()
+	return {'image': image_}

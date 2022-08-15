@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Subcategory, Category, TypeCategory, Article
+from .models import Subcategory, Category, TypeCategory, Article, Cover
 
 class SubcategoryAdmin(admin.ModelAdmin):
     list_display = ['id', 'name']
@@ -23,3 +23,4 @@ admin.site.register(Subcategory, SubcategoryAdmin)
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(TypeCategory, TypeCategoryAdmin)
 admin.site.register(Article, ArticleAdmin)
+admin.site.register(Cover)

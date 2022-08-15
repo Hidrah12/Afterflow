@@ -3,6 +3,12 @@ from django.urls import reverse
 from django.db.models.signals import pre_save
 from django.utils.text import slugify
 
+class Cover(models.Model):
+    image = models.ImageField(upload_to='cover_images/', blank=True)
+
+    def __str__(self) -> str:
+        return f'{self.image}'
+    
 class Subcategory(models.Model):
     name = models.CharField(max_length = 30)
 
