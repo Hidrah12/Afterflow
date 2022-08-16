@@ -6,11 +6,11 @@
         <span class="text-slate-700">Cuenta Afterflow {% if user.is_authenticated %}<i class="fa-solid fa-check"></i>{% else %}<i class="fa-solid fa-xmark"></i>{% endif %}</span>
     </div>
     {% if user.is_authenticated %}
-        <a href="{% url 'account_logout' %}" class="text-blue-400">Cerrar sesión</a>
+        <a href="{% url 'account_logout' %}" class="text-blue-400" title="Cerrar sesión">Cerrar sesión</a>
     {% else %}
         <ul class="flex justify-center space-x-5 text-blue-400">
-            <li><a href="{% url 'account_login' %}" class="hover:text-blue-500">Iniciar Sesión</a></li>
-            <li><a href="{% url 'account_signup' %}" class="hover:text-blue-500">Registrarse</a></li>
+            <li><a href="{% url 'account_login' %}" class="hover:text-blue-500" title="Iniciar sesión">Iniciar sesión</a></li>
+            <li><a href="{% url 'account_signup' %}" class="hover:text-blue-500" title="Registrarse">Registrarse</a></li>
         </ul>
     {% endif %}
 </div>
