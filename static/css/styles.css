@@ -20,32 +20,3 @@
 html[class="dark"] .content_summary {
     color: rgb(189,188,188);
 }
-
-/* Password Reset */
-.password_reset label {
-    display: none;
-}
-#id_email {
-    border-radius: 3px;
-    width: 50%;
-    border: 1px solid rgb(180, 180, 180);
-    margin-top: 3rem;
-}
-html[class="dark"] #id_email {
-    background-color: #22293D;
-    border: none;
-    color: #ABAAAA;
-}
-html[class="dark"] #id_email:hover {
-    background-color: #22293D;
-    color: #ABAAAA;
-}
-html[class="dark"] #id_email {
-    color: white;
-}
-@media screen and (max-width:420px){
-    #id_email {
-        width: 100%;
-        margin-top: 3.5rem;
-    }
-}
