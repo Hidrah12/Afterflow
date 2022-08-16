@@ -8,12 +8,7 @@
 
 {% block content %}
     <div class="w-[44rem] p-8 sm:px-5 bg-white dark:bg-[#02192B] rounded-sm dark:bg-gradient-to-br dark:from-[#131b20] dark:to-[#0d1a21]">
-        <div class="flex items-center my-3">
-            <a href="{% url 'core:home' %}" title="AfterFlow" class="flex items-center space-x-5">
-                <img src="{% static 'images/logo-afterflow.png' %}" alt="Logo Afterflow" class="w-12">
-                <span class="font-semibold text-xl font-['Open Sans'] text-[#3f3636] dark:text-[#e9e9e9]">AfterFlow</span>
-            </a>
-        </div>
+        {% include 'components/account/logo.html' %}
 		<span class="font-bold text-3xl xr:text-xl dark:text-white">{% trans "Confirm E-mail Address" %}</span>
         {% if confirmation %}
             {% user_display confirmation.email_address.user as user_display %}
