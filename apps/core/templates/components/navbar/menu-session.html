@@ -1,9 +1,16 @@
 {% load static %}
-<div class="absolute rounded-md shadow-md top-[4.7rem] right-2 px-3 py-3 bg-white dark:bg-[#1e1c24] dark:text-[#e5e5e5] border-t-[2px] border-t-[#715FD4]" id="menu-session" style="display: none;">
-    <b>Cuentas</b>
-    <div class="flex items-center space-x-4 w-72">
+<div class="absolute w-72 rounded-md shadow-md top-[4.7rem] right-2 p-5 bg-white dark:bg-[#1e1c24] dark:text-[#e5e5e5] border-t-[2px] border-t-[#715FD4]" id="menu-session" style="display: none;">
+    <b class="font-['Fira Code NF']">Cuentas</b>
+    <div class="flex space-x-2 my-2">
         <img src="{% static 'images/logo-afterflow.png' %}" alt="Logo de afterflow" class="w-6">
-        <span>Cuenta Afterflow <i class="fa-solid fa-check"></i></span>
-        <a href="{% url 'account_logout' %}" class="text-blue-400">Cerrar sesión</a>
+        <span class="text-slate-700">Cuenta Afterflow {% if user.is_authenticated %}<i class="fa-solid fa-check"></i>{% else %}<i class="fa-solid fa-xmark"></i>{% endif %}</span>
     </div>
+    {% if user.is_authenticated %}
+        <a href="{% url 'account_logout' %}" class="text-blue-400">Cerrar sesión</a>
+    {% else %}
+        <ul class="flex justify-center space-x-5 text-blue-400">
+            <li><a href="{% url 'account_login' %}" class="hover:text-blue-500">Iniciar Sesión</a></li>
+            <li><a href="{% url 'account_signup' %}" class="hover:text-blue-500">Registrarse</a></li>
+        </ul>
+    {% endif %}
 </div>

@@ -147,5 +147,7 @@ ACCOUNT_LOGOUT_ON_GET = True
 SOCIALACCOUNT_LOGIN_ON_GET = True
 APPEND_SLASH = True
 
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
 if config('DJANGO_PRODUCTION', default=False, cast=bool):
     from .production import *
