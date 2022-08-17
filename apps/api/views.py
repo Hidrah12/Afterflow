@@ -22,7 +22,7 @@ def articles_api_view(request):
     if request.method == 'GET':
         articles = Article.objects.all()
         if articles.exists():
-            articles_serializer = ArticleSerializer(articles, many = True)
+            articles_serializer = ArticleSerializer(articles, many = True)[:50]
             return Response(articles_serializer.data, status = status.HTTP_200_OK)
         else:
             return Response({'message': 'No items'}, status = status.HTTP_204_NO_CONTENT)
