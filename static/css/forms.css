@@ -49,7 +49,7 @@ label {
     color: #a0a0a0;
 }
 input {
-    margin: 15px 0;
+    margin: 10px 0;
     box-shadow: none;
 }
 html[class="dark"] li:hover {
