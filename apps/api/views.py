@@ -17,6 +17,19 @@ def set_count_api_view(request):
     else:
         return Response(status = status.HTTP_405_METHOD_NOT_ALLOWED)
 
+@api_view(['GET'])
+def articles_api_view(request):
+    if request.method == 'GET':
+        articles = Article.objects.all()
+        if articles.exists():
+            articles_serializer = ArticleSerializer(articles, many = True)
+            return Response(articles_serializer.data, status = status.HTTP_200_OK)
+        else:
+            return Response({'message': 'No items'}, status = status.HTTP_204_NO_CONTENT)
+    else:
+
+        return Response(status = status.HTTP_405_METHOD_NOT_ALLOWED)
+
 @api_view(["GET"])
 def get_more_articles_api_view(request):
     global total_items
