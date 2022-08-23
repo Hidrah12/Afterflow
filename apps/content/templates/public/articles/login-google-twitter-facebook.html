@@ -1,11 +1,15 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block title %}{{article.title}}{% endblock %}
 {% block date %}{{article.publication_date}}{% endblock %}
 {% block title_article %}{{article.title}}{% endblock %}
 {% block image_url %}{{article.main_image.url}}{% endblock %}
 {% block content %}
 <p class="content_summary font-['Source Sans Pro ExtraLight']">
-	En JavaScript, puedes dividir el código de tus aplicaciones en varios archivos. Para ello tendrás que exportar las funciones definidas en archivos externos para así poder importarlas en otros archivos. Ya hemos visto cómo exportar una función, aunque en este caso veremos cómo exportar varias funciones, cuyo proceso es muy similar.
-	<br>A modo de ejemplo vamos a crear las siguientes funciones en un mismo archivo:
+	La mayoria de sitios web de hoy en día dan la posibilidad de iniciar sesión o registrarse con alguna 
+	cuenta de una red social, por ejemplo: Google, Twitter, Facebook, solo por decir algunas.<br>
+	Hoy vamos a aprender a como implementar un inicio de sesión y un registro con Google y Github, en próximos artículos
+	estaré hablando sobre como hacer lo mismo pero con Facebook y Twitter.
+	Cabe señalar que los pasos de implementación son muy similares para cada red social.<br>
 </p>
 {% endblock %}

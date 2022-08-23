@@ -20,3 +20,20 @@
 html[class="dark"] .content_summary {
     color: rgb(189,188,188);
 }
+code {
+    background-color: rgb(248 250 252 / 0.7);
+    border-radius: 0.375rem;
+    position: relative;
+    width: 100%;
+    padding: 1.25rem;
+    color: rgb(71 85 105);
+    margin-top: 1rem;
+    display: block;
+    white-space: pre;
+}
+@media screen and (max-width: 639px) {
+    code {
+        padding: 1rem;
+        font-size: 10px;
+    }
+}
