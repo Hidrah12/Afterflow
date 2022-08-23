@@ -5,11 +5,69 @@
 {% block title_article %}{{article.title}}{% endblock %}
 {% block image_url %}{{article.main_image.url}}{% endblock %}
 {% block content %}
-<p class="content_summary font-['Source Sans Pro ExtraLight']">
-	La mayoria de sitios web de hoy en día dan la posibilidad de iniciar sesión o registrarse con alguna 
-	cuenta de una red social, por ejemplo: Google, Twitter, Facebook, solo por decir algunas.<br>
-	Hoy vamos a aprender a como implementar un inicio de sesión y un registro con Google y Github, en próximos artículos
-	estaré hablando sobre como hacer lo mismo pero con Facebook y Twitter.
-	Cabe señalar que los pasos de implementación son muy similares para cada red social.<br>
-</p>
+<p>La mayoria de sitios web de hoy en día dan la posibilidad de iniciar sesión o registrarse con alguna cuenta de una red social, por ejemplo: Google Twitter, Facebook, solo por decir algunas.<br />
+Hoy vamos a aprender a como implementar un inicio de sesión y un registro con Google y Github, en próximos artículos estaré hablando sobre como hacer lo mismo pero con Facebook y Twitter. Cabe señalar que los pasos de implementación son muy similares para cada red social.</p>
+<h3 id="paso1">Paso 1</h3>
+<p>Lo primero que debemos hacer es iniciar un proyecto en django, puedes colocarle el nombre que quieras:</p>
+<pre><code>django-admin startproject src
+</code></pre>
+<h3 id="paso2">Paso 2</h3>
+<p>Instalar django-allauth, este es el paquete que nos va a permitir iniciar sesión o registrarnos con redes sociales.   </p>
+<pre><code>pip install django-allauth
+</code></pre>
+<h3 id="paso3">Paso 3</h3>
+<p>Ahora debemos dirigirnos a settings.py y agregar lo siguiente a INSTALLED_APPS:</p>
+<pre><code>INSTALLED_APPS = [
+	...
+	'django.contrib.sites',
+	'allauth',
+	'allauth.account',
+	'allauth.socialaccount',
+	'allauth.socialaccount.providers.google',
+	'allauth.socialaccount.providers.github',
+]
+</code></pre>
+<h3 id="paso4">Paso 4</h3>
+<p>Agregar las siguientes líneas de código al final del settings.py:   </p>
+<pre><code>AUTHENTICATION_BACKENDS = [
+	'django.contrib.auth.backends.ModelBackend',
+	'allauth.account.auth_backends.AuthenticationBackend'
+]
+
+SITE_ID = 1
+</code></pre>
+<h3 id="paso5">Paso 5</h3>
+<p>Realizar las migraciones (recuerda configurar la base de datos que quieras)</p>
+<pre><code>py manage.py makemigrations
+py manage.py migrate
+</code></pre>
+<h2 id="bienyahemosterminadoconlasconfiguraciones">🎉 Bien ya hemos terminado con las configuraciones 🎉</h2>
+<p>Ahora falta lo más importante 😅 , debemos dirigirnos a <a href="https://console.cloud.google.com/">Google Cloud</a> e iniciar sesión con nuestra cuenta de google.   </p>
+<p><img src="/static/images/content/console-google1.png" alt="Captura" />   </p>
+<p>Debemos crear un nuevo proyecto    </p>
+<p><img src="/static/images/content/console-google2.png" alt="Captura" />     </p>
+<p>Puedes ponerle el nombre que quieras.    </p>
+<p><img src="/static/images/content/console-google3.png" alt="Captura" />    </p>
+<p>Bien, ahora dirigete a <strong>Pantalla de consetimiento</strong>, selecciona la opción <strong>Externos</strong> y dale al botón <strong>Crear</strong>.  </p>
+<p><img src="/static/images/content/console-google4.png" alt="Captura" />   </p>
+<p>Aquí hay muchas opciones que podemos cambiar 😅
+, una de ellas es <strong>Nombre de la aplicación</strong>, aquí puedes poner el nombre de tu sitio web.<br />
+También puedes colocar el <strong>Correo electrónico de asistencia del usuario</strong> que por defecto es el correo con el que iniciaste sesión, puedes agregar el <strong>Logotipo de tu sitio</strong>, etc.<br />
+El apartado que realmente nos interesa es el de <strong>Dominio de la app</strong>, en <strong>Página principal de la aplicación</strong>, debes colocar la url a la página principal de tu sitio (lo que se muestra primero al momento de acceder a tu sitio pues), como el servidor se esta ejecutando en local, colocamos 
+<code>http://127.0.0.1:8000/</code><br />
+Tambíen nos intera la sección de <strong>Dominios autorizados</strong>, aquí debes colocar el dominio que tenga tu sitio, como no tenemos uno pues no lo tocamos por ahora, le damos al botón <strong>Guardar y Continuar</strong>.   </p>
+<p>Ahora pulsa el botón <strong>AGREGAR O QUITAR PERMISOS</strong>, los permisos que nos interesan son los primeros tres, así que los seleccionas y le das al botón <strong>ACTUALIZAR</strong>.     </p>
+<p><img src="/static/images/content/console-google6.png" alt="Captura" /></p>
+<p>Ahora le das a el botón <strong>GUARDAR Y CONTINUAR</strong>, el apartado <strong>Usuarios de prueba</strong>, no nos interesa por ahora, le damos a <strong>GUARDAR Y CONTINUAR</strong> y a <strong>VOLVER AL PANEL</strong>.  </p>
+<p>Ahora nos dirigimos al apartado de <strong>Credenciales</strong> y le damos a <strong>CREATE CREDENTIALS</strong> y luego seleccionamos  <strong>ID de cliente de OAuth</strong>.   </p>
+<p><img src="/static/images/content/console-google8.png" alt="Captura" /></p>
+<p>En <strong>Tipo de aplicación</strong> seleccionamos Aplicación Web.<br />
+En la opción de <strong>Nombre</strong> pon el nombre que quieras, en <strong>URI de redireccionamiento autorizados</strong> debemos añadir una url un tanto peculiar:  </p>
+<p><code>http://127.0.0.1:8000/accounts/google/login/callback/</code> o si tenemos un dominio:<br />
+<code>http://dominio.com/accounts/google/login/callback/</code> nosotros colocaremos estos dos: </p>
+<p><code>http://127.0.0.1:8000/accounts/google/login/callback/</code><br />
+<code>http://localhost/accounts/google/login/callback/</code>   </p>
+<p><img src="/static/images/content/console-google9.png" alt="Captura" />   </p>
+<p>Ahora te debería aparecer un mensaje con tu <strong>ID de cliente</strong> y tu <strong>Secreto del cliente</strong>, guardalos y no los pierdas. xd.</p>
+<h2 id="bienesosfueronmuchospasosperoyacasiesta">Bien esos fueron muchos pasos 😅 pero ya casi esta.</h2>
 {% endblock %}
