@@ -49,6 +49,6 @@ code {
 @media screen and (max-width: 639px) {
     .ctn_title2 {
         font-size: 1.5rem/* 36px */;
-        line-height: 1.5rem/* 40px */;       
+        line-height: 1.8rem/* 40px */;       
     }
 }
