@@ -5,7 +5,7 @@
 {% block title_article %}{{article.title}}{% endblock %}
 {% block image_url %}{{article.main_image.url}}{% endblock %}
 {% block content %}
-<p>La mayoria de sitios web de hoy en día dan la posibilidad de iniciar sesión o registrarse con alguna cuenta de una red social, por ejemplo: Google Twitter, Facebook, solo por decir algunas.<br />
+<p>La mayoria de sitios web de hoy en día dan la posibilidad de iniciar sesión o registrarse con alguna cuenta de una red social, por ejemplo: Google Twitter, Facebook, solo por decir algunas.<br>
 Hoy vamos a aprender a como implementar un inicio de sesión y un registro con Google y Github, en próximos artículos estaré hablando sobre como hacer lo mismo pero con Facebook y Twitter. Cabe señalar que los pasos de implementación son muy similares para cada red social.</p>
 <h3 id="paso1">Paso 1</h3>
 <p>Lo primero que debemos hacer es iniciar un proyecto en django, puedes colocarle el nombre que quieras:</p>
@@ -37,6 +37,14 @@ Hoy vamos a aprender a como implementar un inicio de sesión y un registro con G
 SITE_ID = 1
 </code></pre>
 <h3 id="paso5">Paso 5</h3>
+<p>Dirigite al archivo settings.py y agrega la siguiente linea de codigo a urlpatterns: </p>
+<pre><code>from django.urls import include
+urlpatterns = [
+	...
+	path('accounts/', include('allauth.urls')),
+]
+</code></pre>
+<h3 id="paso6">Paso 6</h3>
 <p>Realizar las migraciones (recuerda configurar la base de datos que quieras)</p>
 <pre><code>py manage.py makemigrations
 py manage.py migrate
@@ -69,5 +77,42 @@ En la opción de <strong>Nombre</strong> pon el nombre que quieras, en <strong>U
 <code>http://localhost/accounts/google/login/callback/</code>   </p>
 <p><img src="/static/images/content/console-google9.png" alt="Captura" />   </p>
 <p>Ahora te debería aparecer un mensaje con tu <strong>ID de cliente</strong> y tu <strong>Secreto del cliente</strong>, guardalos y no los pierdas. xd.</p>
-<h2 id="bienesosfueronmuchospasosperoyacasiesta">Bien esos fueron muchos pasos 😅 pero ya casi esta.</h2>
+<h2 id="bienyahemosterminadocongoogleahorafaltagithub">Bien ya hemos terminado con Google, ahora falta Github</h2>
+<p>Es casi el mismo proceso:   </p>
+<h3 id="paso1-1">Paso 1</h3>
+<p>Acceder a este <a href="https://github.com/settings/applications">enlace</a>   </p>
+<h3 id="paso2-1">Paso 2</h3>
+<p>Dirigete a <strong>Developer settings</strong>   </p>
+<p><img src="/static/images/content/github-1.png" alt="Captura" /></p>
+<h3 id="paso3-1">Paso 3</h3>
+<p>Accede a OAuth Apps y dale a botón <strong>Register a new application</strong></p>
+<p><img src="/static/images/content/github-2.png" alt="Captura" /></p>
+<h3 id="paso4-1">Paso 4</h3>
+<p>Ahora en <strong>Application name</strong> coloca el nombre de tu sitio, en <strong>Homepage URL</strong> coloca la url principal de tu sitio, y en <strong>Authorization callback URL</strong> copia la url como está en la imagen.  </p>
+<p><img src="/static/images/content/github-3.png" alt="Captura" /></p>
+<p>Dale a el botón <strong>Register application</strong>, te debería de aparecer el <strong>Client ID</strong> y tu <strong>Client secrets</strong>.   </p>
+<p>Bien una vez llegado a este punto solo nos falta agregar algunos datos desde el administrador de django, ahora crea un nuevo super usuario.</p>
+<pre><code>py manage.py createsuperuser
+</code></pre>
+<p>Ejecuta el servidor</p>
+<pre><code>py manage.py runserver
+</code></pre>
+<p>Ahora dirigete al panel de administración de django</p>
+<p><img src="/static/images/content/admin-1.png" alt="Captura" /></p>
+<p>Entra a <strong>Sites</strong> y agrega un dominio (preferentemente el dominio de tu sitio web).</p>
+<p><img src="/static/images/content/admin-2.png" alt="Captura" /></p>
+<p>Ahora debemos configurar algunas cosas para que todo funcione, primero con google, en <strong>Client id</strong> colocamos el ID de cliente que se nos generó al terminar de configurar las credenciales de google lo mismo con tu Secreto de cliente de google.</p>
+<p><img src="/static/images/content/admin-3.png" alt="Captura" /></p>
+<p>Lo mismo con github:   </p>
+<p><img src="/static/images/content/admin-4.png" alt="Captura" /></p>
+<p>Solo nos queda comprobar si funciona:   </p>
+<p>Primero accede a <code>http://127.0.0.1:8000/accounts/logout/</code> para cerrar la sesión, luego ve a <code>http://127.0.0.1:8000/accounts/login/</code>
+deberias de encontrar algo como esto </p>
+<p><img src="/static/images/content/login-1.png" alt="Captura" /></p>
+<p>bien, ya tenemos los enlaces para iniciar sesión con Google y Github, probemos a iniciar sesión con Google: </p>
+<p><img src="/static/images/content/login.png" alt="Captura" /></p>
+<p>Funciona!!!</p>
+<p>Probemos con Github: </p>
+<p><img src="/static/images/content/login-3.png" alt="Captura" /></p>
+<p>También funciona!!!</p>
 {% endblock %}
