@@ -98,7 +98,7 @@ En la opción de __Nombre__ pon el nombre que quieras, en __URI de redireccionam
 
 Ahora te debería aparecer un mensaje con tu __ID de cliente__ y tu __Secreto del cliente__, guardalos y no los pierdas. xd.
 
-## Bien ya hemos terminado con Google, ahora falta Github
+## Bien ya hemos terminado con Google✅, ahora falta Github🥲
 Es casi el mismo proceso:   
 ### Paso 1
 Acceder a este [enlace](https://github.com/settings/applications)   
@@ -144,8 +144,8 @@ Lo mismo con github:
 ![Captura](/static/images/content/admin-4.png)
 
 Solo nos queda comprobar si funciona:   
-
-Primero accede a `http://127.0.0.1:8000/accounts/logout/` para cerrar la sesión, luego ve a `http://127.0.0.1:8000/accounts/login/`
+Primero accede a   
+`http://127.0.0.1:8000/accounts/logout/` para cerrar la sesión, luego ve a    `http://127.0.0.1:8000/accounts/login/` 
 deberias de encontrar algo como esto 
 
 ![Captura](/static/images/content/login-1.png)
@@ -154,10 +154,10 @@ bien, ya tenemos los enlaces para iniciar sesión con Google y Github, probemos 
 
 ![Captura](/static/images/content/login.png)
 
-Funciona!!!
-
+Funciona 🎉🎉
 Probemos con Github: 
 
 ![Captura](/static/images/content/login-3.png)
 
-También funciona!!!
+También funciona!!!   🎉🎉    
+Bien en este artículo hemos aprendido a hacer un inicio de sesión y un registro, pero los estilos son un poco (por no decir bastantes) feos, así que voy a estar publicando en los próximos días un articulo en el que te enseño a como personalizar el inicio de sesión y el registro para que nos quede igual o mejor al [inicio de sesión de AfterFlow](https://afterflow.herokuapp.com/accounts/login/)
