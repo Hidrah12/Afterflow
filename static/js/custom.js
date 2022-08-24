@@ -12,7 +12,11 @@ Array.from(summarys).forEach(summary => {
 // Se agrego el nombre a los titulos h2, h3 y los párrafos.
 let ctnSummary = document.getElementsByTagName('p')
 Array.from(ctnSummary).forEach(element => {
-    element.className = 'ctn_summary'
+    if (element.classList.toString().includes('paragraph')) {
+        
+    } else {
+        element.className = 'ctn_summary'
+    }
 })
 let ctnTitles3 = document.getElementsByTagName('h3')
 Array.from(ctnTitles3).forEach(element => {
@@ -20,7 +24,11 @@ Array.from(ctnTitles3).forEach(element => {
 })
 let ctnTitles2 = document.getElementsByTagName('h2')
 Array.from(ctnTitles2).forEach(element => {
-    element.className = 'ctn_title2'
+    if (element.classList.toString().includes('no-modified-class')) {
+
+    } else {
+        element.className = 'ctn_title2'
+    }
 })
 // Se agrego las url a los enlaces de leer más.
 let urls = []

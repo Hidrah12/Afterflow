@@ -7,8 +7,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="{% static 'icons/icon-afterflow.ico' %}" type="image/x-icon">
     <script src="https://kit.fontawesome.com/6a9d03678c.js" crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="{% static 'css/styles.css' %}">
 	<link rel="stylesheet" href="{% static 'dist/output.css' %}">
+	<link rel="stylesheet" href="{% static 'css/styles.css' %}">
 	<title>{{category.name}} | Afterflow</title>
 </head>
 <body class="dark:bg-[#060f15] scroll-smooth">
@@ -19,13 +19,17 @@
 
 	<section class="flex justify-center items-center relative overflow-hidden bg-gradient-to-br from-[#ffffff] via-[#fffefe] to-[#f8f8f8] dark:bg-gradient-to-br dark:from-[#131b20] dark:to-[#0d1a21]">
 		<div class="w-[55%] bxl:w-[75%] sm:w-[80%]" id="content-articles">
-			{% for content in articles %}
-				<article id="{{content.id}}" class="article last:mb-10 my-24 relative">
-					<h2 class="my-5 "><a href="{% url 'content:item-details' content.slug %}" class="title text-5xl sm:text-3xl font-bold font-['Roboto'] text-slate-800 my-5 hover:text-cyan-400 transition-colors dark:text-slate-50 dark:hover:text-cyan-400 xr:text-[1.3rem]" title="{{content.title}}">{{content.title}}</a></h2>
-					<span class="italic text-[rgb(172,172,172)]">Publicado el {{content.publication_date}} <a href="{{content.get_absolute_url}}" class="py-1 p-2 ml-2 rounded-sm text-xs font-normal bg-[#f3f1f1d4] text-slate-600 hover:bg-[#d8d8d8]">{{content.category}}</a></span>
-					<p class='paragraph text-xl sm:text-base leading-8 font-light my-5 font-["Source Sans Pro ExtraLight"] text-slate-600 dark:text-slate-300 whitespace-pre-wrap'>{{content.summary}}</p>
-				</article>
-			{% endfor %}
+			{% if articles %}
+				{% for content in articles %}
+					<article id="{{content.id}}" class="article last:mb-10 my-24 relative">
+						<h2 class="my-5 "><a href="{% url 'content:item-details' content.slug %}" class="no-modified-class title text-5xl sm:text-3xl font-bold font-['Roboto'] text-slate-800 my-5 hover:text-cyan-400 transition-colors dark:text-slate-50 dark:hover:text-cyan-400 xr:text-[1.3rem]" title="{{content.title}}">{{content.title}}</a></h2>
+						<span class="italic text-[rgb(172,172,172)]">Publicado el {{content.publication_date}} <a href="{{content.get_absolute_url}}" class="py-1 p-2 ml-2 rounded-sm text-xs font-normal bg-[#f3f1f1d4] text-slate-600 hover:bg-[#d8d8d8]">{{content.category}}</a></span>
+						<p class='paragraph text-xl sm:text-base leading-8 font-light my-5 font-["Source Sans Pro ExtraLight"] text-slate-600 dark:text-slate-300 whitespace-pre-wrap'>{{content.summary}}</p>
+					</article>
+				{% endfor %}
+			{% else %}
+				<h2 class="no-modified-class text-4xl font-medium my-20 font-['Roboto']">Estamos trabajando duro, para agregar articulos a esta categoría 🤌.</h2>
+			{% endif %}
 		</div>
 	</section>
 	

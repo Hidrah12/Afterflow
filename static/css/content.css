@@ -1,0 +1,54 @@
+/* Esto ya es para el contenido */
+.ctn_title2 {
+    font-size: 2.25rem/* 36px */;
+    line-height: 2.5rem/* 40px */;
+    font-family: 'Roboto';
+    font-weight: 500;
+    color: rgb(30 41 59);
+    margin-top: 1.25rem/* 20px */;
+    margin-bottom: 1.25rem/* 20px */;
+}
+.ctn_title3 {
+    font-size: 1.875rem/* 30px */;
+    line-height: 2.25rem/* 36px */;
+    font-family: 'Roboto';
+    font-weight: 500;
+    color: rgb(30 41 59);
+    margin-top: 1.25rem/* 20px */;
+    margin-bottom: 1.25rem/* 20px */;
+}
+.ctn_summary {
+    color: #534f4c;
+    font-size: 1.125rem/* 18px */;
+    line-height: 1.75rem;
+    text-align: justify;
+    margin-top: 2.5rem;
+    font-family: 'Source Sans Pro';
+}
+html[class="dark"] .ctn_summary {
+    color: rgb(189,188,188);
+}
+html[class="dark"] .ctn_title3 {
+    color: rgb(248 250 252);
+}
+html[class="dark"] .ctn_title2 {
+    color: rgb(248 250 252);
+}
+code {
+    background-color: rgb(248 250 252 / 0.7);
+    border-radius: 0.375rem;
+    position: relative;
+    width: 100%;
+    padding: 1.25rem;
+    color: rgb(71 85 105);
+    margin-top: 1rem;
+    display: block;
+    white-space: pre-wrap;
+    overflow-x: auto;
+}
+@media screen and (max-width: 639px) {
+    .ctn_title2 {
+        font-size: 1.5rem/* 36px */;
+        line-height: 1.5rem/* 40px */;       
+    }
+}

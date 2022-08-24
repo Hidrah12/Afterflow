@@ -18,7 +18,7 @@ class HomeView(ListView):
         context['total_items'] = self.articles.count()
         return context
 
-@cache_page(60 * 10)
+# @cache_page(60 * 10)
 def articles_from_a_category_view(request, category_name):
     articles = Article.objects.filter(category_for_development = category_name)
     category = Category.objects.filter(name = category_name).first()
