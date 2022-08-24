@@ -1,4 +1,7 @@
 /* Esto ya es para el contenido */
+a {
+    color: rgb(6 182 212)
+}
 .ctn_title2 {
     font-size: 2.25rem/* 36px */;
     line-height: 2.5rem/* 40px */;
